@@ -110,7 +110,7 @@ h2,h3{text-wrap:balance}
 .js .portrait-wrap{opacity:0;transform:translate(-50%,10%);transition:opacity 1.1s var(--ease-expo),transform 1.4s var(--ease-expo)}
 .js .portrait-wrap.in{opacity:1;transform:translate(-50%,0)}
 .hero-fade{position:absolute;inset-inline:0;bottom:0;z-index:25;height:26vh;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none}
-.hero-name{position:absolute;inset-inline:0;bottom:0;z-index:10;transform:translateY(6%);display:flex;flex-direction:column;align-items:center;font-size:min(var(--fs-hero),34vw);line-height:.78;color:var(--accent)}
+.hero-name{position:absolute;inset-inline:0;bottom:0;z-index:10;transform:translateY(6%);display:flex;flex-direction:column;align-items:center;font-size:min(var(--fs-hero),34vw,44svh);line-height:.78;color:var(--accent)}
 .hero-name .line{display:block;white-space:nowrap;overflow:hidden;padding-block:.07em;margin-block:-.07em}
 .ch{display:inline-block}
 .js .hero-name .ch{transform:translateY(100%);opacity:0;transition:transform .9s var(--ease-expo),opacity .9s var(--ease-expo)}
@@ -226,7 +226,7 @@ h2,h3{text-wrap:balance}
   .fb-left{grid-column:span 6}.fb-mid{grid-column:span 3}.fb-right{grid-column:span 3;text-align:right}
 }
 .form-slot{margin-top:3rem;max-width:44rem;border-top:1px solid var(--line);padding-top:2rem}
-.form-slot iframe{display:block;width:100%;border:0;min-height:30rem;background:transparent}
+.form-slot iframe{display:block;width:100%;border:0;min-height:30rem;background:var(--bg);color-scheme:light}
 .form-ph{display:grid;place-items:center;min-height:22rem;background:var(--surface);border:1px solid var(--line);border-radius:.125rem}
 .form-ph span{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted);padding:1rem;text-align:center}
 .form-note{margin-top:1.5rem;max-width:44rem;color:var(--muted)}
@@ -515,7 +515,7 @@ h2,h3{text-wrap:balance}
   var slot=document.getElementById('tally-slot'),fid=slot.getAttribute('data-tally-id');
   var inPreview=/claude|anthropic/i.test(location.hostname)||location.protocol==='blob:'||location.protocol==='about:';
   if(fid&&!inPreview){var f=document.createElement('iframe');
-    f.src='https://tally.so/embed/'+encodeURIComponent(fid)+'?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
+    f.src='https://tally.so/embed/'+encodeURIComponent(fid)+'?alignLeft=1&hideTitle=1&dynamicHeight=1';
     f.title='Inquiry form';f.loading='lazy';f.setAttribute('data-tally-src',f.src);
     slot.innerHTML='';slot.appendChild(f);
     var ts=document.createElement('script');ts.src='https://tally.so/widgets/embed.js';ts.async=true;
