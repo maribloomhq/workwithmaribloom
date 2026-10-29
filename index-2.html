@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Maribeth Bañas | Win-Back Automation for Salons, Spas &amp; Gyms</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23111019%22/%3E%3Cg%20transform%3D%22translate%2832%2033%29%22%20fill%3D%22none%22%20stroke%3D%22%239B6DFF%22%20stroke-width%3D%223.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20transform%3D%22rotate%280%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%2872%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%28144%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%28216%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%28288%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Ccircle%20r%3D%222.6%22/%3E%3C/g%3E%3C/svg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Maribeth Bañas builds missed-call text-back, review requests and win-back automation for salons, spas and gyms.">
@@ -28,7 +29,7 @@ html{font-size:16px;background:var(--bg)}
 @media (max-width:1920px){html{font-size:.833333vw}}
 @media (max-width:1440px){html{font-size:1.111111vw}}
 @media (max-width:1024px){html{font-size:1.5625vw}}
-@media (max-width:640px){html{font-size:4.444444vw} :root{--gutter:16px}}
+@media (max-width:640px){html{font-size:4.444444vw} :root{--gutter:16px;--section:5.5rem}}
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 img{display:block;max-width:100%}
@@ -117,19 +118,20 @@ h2,h3{text-wrap:balance}
 .js .hero-name.in .ch{transform:none;opacity:1}
 .scroll-cue{position:absolute;z-index:30;bottom:max(2rem,env(safe-area-inset-bottom,0px));left:max(var(--gutter),env(safe-area-inset-left,0px));display:flex;align-items:center;gap:.75rem;font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted)}
 .scroll-cue::before{content:"";width:2.5rem;height:1px;background:var(--accent)}
-@media (max-width:639px){
+@media (min-width:640px){
+  .hero-top{flex-direction:row;align-items:flex-start;justify-content:space-between;padding-top:8rem}
+  .roles{font-size:var(--fs-h2)}
+  .hero-desc{text-align:right}
+  .portrait-wrap{height:86svh}
+}
+/* magazine-cover hero: phones, and any tall portrait screen (tablets, phone "desktop site" mode) */
+@media (max-width:639px), (orientation:portrait) and (max-width:1199px){
   .hero{min-height:0}
   .hero-top{padding-top:6rem}
   .hero::after{content:"";display:block;height:calc(min(118vw,34rem) + 50vw)}
   .portrait-wrap{height:min(118vw,34rem)}
   .hero-name{z-index:10;bottom:calc(min(118vw,34rem) - 7vw);transform:none}
   .scroll-cue{display:none}
-}
-@media (min-width:640px){
-  .hero-top{flex-direction:row;align-items:flex-start;justify-content:space-between;padding-top:8rem}
-  .roles{font-size:var(--fs-h2)}
-  .hero-desc{text-align:right}
-  .portrait-wrap{height:86svh}
 }
 
 /* ---------- marquee ---------- */
@@ -195,7 +197,7 @@ h2,h3{text-wrap:balance}
 
 /* ---------- contact ---------- */
 .contact{padding-top:var(--section)}
-.contact .section-title{font-size:var(--fs-h1);max-width:18ch}
+.contact .section-title{font-size:var(--fs-h2);max-width:18ch}
 .contact-body{margin-top:2rem;max-width:44ch;font-size:var(--fs-lead);line-height:1.45;color:var(--muted)}
 .book{margin-top:3rem;display:inline-flex;align-items:baseline;gap:.75rem;font-size:var(--fs-h1);line-height:1;font-weight:600;letter-spacing:-.01em;transition:transform .34s ease-out,color .34s ease-out}
 .book .arrow{color:var(--accent)}
@@ -212,6 +214,7 @@ h2,h3{text-wrap:balance}
 .social a:hover,.social a:focus-visible{color:var(--fg)}
 .social a:hover::before,.social a:focus-visible::before{width:1.5rem;margin-right:.75rem}
 .copy{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
+.copy a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}.copy a:hover,.copy a:focus-visible{color:var(--fg)}
 @media (min-width:640px){
   .head-row{flex-direction:row;align-items:flex-end;justify-content:space-between}
   .section-title{font-size:var(--fs-h1)}
@@ -226,15 +229,104 @@ h2,h3{text-wrap:balance}
   .fb-left{grid-column:span 6}.fb-mid{grid-column:span 3}.fb-right{grid-column:span 3;text-align:right}
 }
 .form-slot{margin-top:3rem;max-width:44rem;border-top:1px solid var(--line);padding-top:2rem}
-.form-slot iframe{display:block;width:100%;border:0;min-height:30rem;background:var(--bg);color-scheme:light}
+.form-slot iframe{display:block;width:100%;border:0;height:1500px;background:var(--bg);color-scheme:light}
+@media (min-width:640px){.form-slot iframe{height:1150px}}
+.contact-grid{display:grid;gap:0}
+@media (min-width:1024px){
+  .contact-grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);align-items:start}
+  .contact-intro{grid-column:span 5;position:sticky;top:8rem}
+  .contact-form{grid-column:span 7;padding-top:.5rem}
+  .contact-grid .contact-head{flex-direction:column;align-items:flex-start}
+  .contact .contact-grid .section-title{font-size:var(--fs-h1)}
+  .contact-grid .bloom{width:12rem}
+  .contact-grid .form-slot{margin-top:0;max-width:none}
+}
 .form-ph{display:grid;place-items:center;min-height:22rem;background:var(--surface);border:1px solid var(--line);border-radius:.125rem}
 .form-ph span{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted);padding:1rem;text-align:center}
 .form-note{margin-top:1.5rem;max-width:44rem;color:var(--muted)}
 
+
+/* ---------- voices (single real review) ---------- */
+.voice{margin-top:3rem;display:grid;gap:2rem;border-top:1px solid var(--line);padding-top:2.5rem}
+.voice blockquote p{max-width:30ch;font-size:var(--fs-h3);line-height:1.3;font-weight:500;letter-spacing:-.01em}
+.voice footer{margin-top:2rem}
+
+/* ---------- working together ---------- */
+.together .section-title{max-width:16ch}
+.together-grid{margin-top:4rem;display:grid;gap:4rem}
+.plan-note{margin-top:1.5rem;color:var(--muted);max-width:44ch}
+.tools-title{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted);margin-bottom:1rem}
+.tools div{display:grid;gap:.5rem;border-top:1px solid var(--line);padding-block:1.25rem}
+.tools div:last-child{border-bottom:1px solid var(--line)}
+.tools dt{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.18em;color:var(--accent)}
+.tools dd{font-size:var(--fs-lead);line-height:1.4;font-weight:500;letter-spacing:-.01em}
+@media (min-width:1024px){
+  .together-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gutter)}
+  .together-steps{grid-column:span 8}
+}
+
+/* ---------- CTA button ---------- */
+.cta-btn{position:relative;display:inline-flex;align-items:center;gap:.75rem;min-height:44px;padding:.8rem 1.5rem;border:1px solid var(--accent);border-radius:9999px;font-size:var(--fs-eyebrow);line-height:1;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--fg);overflow:hidden;isolation:isolate;transition:color .35s ease-out}
+.cta-btn::before{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left center;transition:transform .5s var(--ease-expo);z-index:-1}
+.cta-btn:hover,.cta-btn:focus-visible{color:var(--bg)}
+.cta-btn:hover::before,.cta-btn:focus-visible::before{transform:scaleX(1)}
+.cta-btn .arr{display:inline-block;animation:nudge 3s var(--ease-expo) infinite}
+@keyframes nudge{0%,72%,100%{transform:translateX(0)}82%{transform:translateX(6px)}}
+.hero-side{display:flex;flex-direction:column;align-items:flex-start;gap:1.5rem}
+.nav-links a.cta-btn{padding:.6rem 1.1rem;color:var(--fg)}
+.nav-links a.cta-btn::after{display:none}
+.nav-links a.cta-btn:hover,.nav-links a.cta-btn:focus-visible{color:var(--bg)}
+@media (min-width:640px){.hero-side{align-items:flex-end}}
+
+/* ---------- bloom line drawing ---------- */
+.contact-head{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:2rem}
+.bloom{width:10rem;height:auto;flex:none;color:var(--accent);overflow:visible}
+.bloom .d{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0}
+.js .bloom .d{stroke-dashoffset:1;transition:stroke-dashoffset 1.6s var(--ease-quart)}
+.js .bloom.in .d{stroke-dashoffset:0}
+@media (min-width:768px){.contact-head{flex-direction:row;align-items:flex-end;justify-content:space-between}.bloom{width:17rem}}
+
+/* ---------- skills & tools marquee ---------- */
+.skills-band{display:grid;gap:1.25rem}
+.band-label{margin-bottom:.25rem}
+.track-tools li{font-family:var(--font-sans);font-size:var(--fs-lead);font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
+.track-tools li::after{width:.4rem;height:.4rem;margin-inline:1.5rem}
+.track.reverse{animation-direction:reverse;animation-duration:32s}
+
+/* ---------- FAQ ---------- */
+.faq .section-title{max-width:14ch}
+.faq-list{margin-top:3rem;max-width:56rem}
+.faq-list details{border-top:1px solid var(--line)}
+.faq-list details:last-child{border-bottom:1px solid var(--line)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:44px;padding-block:1.5rem;font-size:var(--fs-h3);line-height:1.2;font-weight:600;letter-spacing:-.01em;transition:color .3s}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:hover{color:var(--accent)}
+.faq-list .plus{position:relative;flex:none;width:1.25rem;height:1.25rem}
+.faq-list .plus::before,.faq-list .plus::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:var(--accent);transition:transform .4s var(--ease-expo)}
+.faq-list .plus::after{transform:rotate(90deg)}
+.faq-list details[open] .plus::after{transform:rotate(0deg)}
+.faq-list details[open] .plus::before{transform:rotate(180deg)}
+.faq-list .answer{padding-bottom:1.75rem;max-width:60ch;color:var(--muted)}
+.faq-list details[open] .answer{animation:faqIn .45s var(--ease-expo)}
+@keyframes faqIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* tiny bloom separators in the skills & tools marquee */
+.marquee .track li::after{width:1.6rem;height:1.6rem;border-radius:0;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22-24%20-24%2048%2048%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%223.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20transform%3D%22rotate%280%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%2872%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%28144%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%28216%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%28288%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Ccircle%20r%3D%222.6%22/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22-24%20-24%2048%2048%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%223.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20transform%3D%22rotate%280%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%2872%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%28144%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%28216%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Cpath%20transform%3D%22rotate%28288%29%22%20d%3D%22M0%200%20C%20-5%20-8%2C%20-4%20-17%2C%200%20-21%20C%204%20-17%2C%205%20-8%2C%200%200%22/%3E%3Ccircle%20r%3D%222.6%22/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+.skills-band .track-tools li::after{width:1.05rem;height:1.05rem;margin-inline:1.25rem}
+
+/* mid-page CTA rows */
+.mid-cta{margin-top:4rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem 2rem;border-top:1px solid var(--line);padding-top:2rem}
+.mid-cta p{font-size:var(--fs-h3);line-height:1.2;font-weight:600;letter-spacing:-.01em;max-width:28ch;text-wrap:balance}
+
+/* story photo */
+.story-photo{margin-top:2.5rem;width:min(19rem,72vw);max-width:100%}
+.story-photo img{width:100%;height:auto}
+@media (min-width:1024px){.story-photo{width:20rem;margin-top:3.5rem}}
+
 @media (prefers-reduced-motion:reduce){
   .preloader{display:none}
   .track{animation:none}
-  .js .fade,.js .split .wi,.js .roles .li,.js .hero-name .ch,.mobile-menu a,.js .portrait-wrap{opacity:1!important;transform:none!important;transition:none!important}
+  .js .fade,.js .split .wi,.js .roles .li,.js .hero-name .ch,.mobile-menu a,.js .portrait-wrap,.js .bloom .d,.cta-btn .arr,.faq-list details[open] .answer{opacity:1!important;transform:none!important;transition:none!important}
 }
 </style>
 </head>
@@ -263,7 +355,7 @@ h2,h3{text-wrap:balance}
       <li><a href="#story">Story</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#system">System</a></li>
-      <li><a href="#contact" class="cta">Start here</a></li>
+      <li><a href="#contact" class="cta cta-btn">Start here <span class="arr" aria-hidden="true">→</span></a></li>
     </ul>
     <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
@@ -289,7 +381,10 @@ h2,h3{text-wrap:balance}
         <span class="line"><span class="li" style="transition-delay:.16s">Win-back</span></span>
         <span class="line"><span class="li" style="transition-delay:.24s">Rebooked</span></span>
       </h2>
-      <p class="hero-desc fade" id="hero-desc">Missed calls, quiet regulars, too few reviews. I build the automation that brings clients back to salons, spas and gyms.</p>
+      <div class="hero-side">
+        <p class="hero-desc fade" id="hero-desc">Missed calls, quiet regulars, too few reviews. I build the automation that brings clients back to salons, spas and gyms.</p>
+        <div class="fade" id="hero-cta"><a class="cta-btn" href="#contact">Start here <span class="arr" aria-hidden="true">→</span></a></div>
+      </div>
     </div>
 
     <h1 class="hero-name display" id="hero-name" aria-label="Maribloom">
@@ -317,6 +412,9 @@ h2,h3{text-wrap:balance}
         <p class="eyebrow">The Story</p>
         <h2 class="section-title display split">Fifteen years of making sure nothing gets missed.</h2>
         <p class="story-body fade">For more than fifteen years I've run busy households in Malaysia, Singapore and Dubai: the schedules, the reminders, the small follow-ups that keep everything moving without anyone noticing. Now I build that same quiet reliability for salons, spas and gyms. My automations answer every missed call, ask happy clients for reviews, and bring regulars back before they drift away.</p>
+        <figure class="story-photo fade slow">
+          <img src="sitting.webp" alt="Maribeth Bañas sitting on a chair, working on a laptop" width="717" height="1289" loading="lazy" decoding="async">
+        </figure>
       </div>
       <ul class="principles story-right">
         <li class="fade" data-stagger="90"><span class="p-num">01</span><div><h3 class="p-title">A missed call is a lost booking</h3><p class="p-text">When nobody picks up, people book with whoever does. The first reply should go out on its own, while they still want the appointment.</p></div></li>
@@ -342,7 +440,7 @@ h2,h3{text-wrap:balance}
           <div class="frame"><span>[Screenshots + Loom walkthrough]</span></div>
           <div class="card-row">
             <div>
-              <h3 class="card-name">Day Spa Win-Back System</h3>
+              <h3 class="card-name">Day Spa Win&#8209;Back System</h3>
               <p class="card-kind label">Day spa · Mock build</p>
             </div>
             <p class="status">Concept build<br>In progress</p>
@@ -385,7 +483,7 @@ h2,h3{text-wrap:balance}
           <div class="card-row">
             <div>
               <h3 class="card-name">[n8n workflow name]</h3>
-              <p class="card-kind label">Lead follow-up</p>
+              <p class="card-kind label">Lead follow&#8209;up</p>
             </div>
             <p class="status">Training project<br>VA Talks</p>
           </div>
@@ -398,6 +496,18 @@ h2,h3{text-wrap:balance}
         </article>
       </li>
     </ul>
+    <div class="mid-cta fade"><p>Want a system like this for your business?</p><a class="cta-btn" href="#contact">Start here <span class="arr" aria-hidden="true">→</span></a></div>
+  </section>
+
+
+  <!-- Voices: hidden until Elein's real review arrives. Remove the hidden attribute and replace the quote. -->
+  <section class="voices section gutter" id="voices" hidden>
+    <p class="eyebrow">Voices</p>
+    <h2 class="section-title display split">What clients say.</h2>
+    <figure class="voice fade">
+      <blockquote><p>“[Elein's review goes here]”</p></blockquote>
+      <figcaption class="label">Elein Calingasan · Financial Advisor</figcaption>
+    </figure>
   </section>
 
   <section class="system section gutter" id="system">
@@ -415,10 +525,77 @@ h2,h3{text-wrap:balance}
     </ol>
   </section>
 
+
+  <section class="together section gutter" id="together">
+    <p class="eyebrow">Working Together</p>
+    <h2 class="section-title display split">Simple from first call to handover.</h2>
+    <div class="together-grid">
+      <div class="together-steps">
+        <ol class="principles">
+          <li class="fade" data-stagger="90"><span class="p-num">01</span><div><h3 class="p-title">Free call</h3><p class="p-text">We look at how your business handles missed calls, reviews and returning clients, and where bookings slip through.</p></div></li>
+          <li class="fade" data-stagger="90"><span class="p-num">02</span><div><h3 class="p-title">Fixed-price plan</h3><p class="p-text">You get one clear price for the package. No hourly billing and no surprises.</p></div></li>
+          <li class="fade" data-stagger="90"><span class="p-num">03</span><div><h3 class="p-title">Build</h3><p class="p-text">I set everything up inside your tools and test it before it goes live.</p></div></li>
+          <li class="fade" data-stagger="90"><span class="p-num">04</span><div><h3 class="p-title">Handover</h3><p class="p-text">You get a recorded walkthrough, so your team knows exactly how it runs.</p></div></li>
+        </ol>
+        <p class="plan-note fade">Timeline and price are agreed upfront in your plan.</p>
+        <div class="mid-cta fade"><p>Ready when you are.</p><a class="cta-btn" href="#contact">Start here <span class="arr" aria-hidden="true">→</span></a></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="marquee skills-band" aria-label="Skills and tools">
+    <p class="eyebrow gutter band-label">Skills &amp; Tools</p>
+    <ul class="track display"><li>Missed&#8209;Call Text&#8209;Back</li><li>Review Requests</li><li>Win&#8209;Back Campaigns</li><li>CRM Setup</li><li>Email Flows</li><li>Lead Scoring</li><li>Booking Funnels</li><li aria-hidden="true">Missed&#8209;Call Text&#8209;Back</li><li aria-hidden="true">Review Requests</li><li aria-hidden="true">Win&#8209;Back Campaigns</li><li aria-hidden="true">CRM Setup</li><li aria-hidden="true">Email Flows</li><li aria-hidden="true">Lead Scoring</li><li aria-hidden="true">Booking Funnels</li></ul>
+    <ul class="track track-tools reverse"><li>GoHighLevel</li><li>Reputation Management</li><li>n8n</li><li>Make.com</li><li>Klaviyo</li><li>Tally</li><li>Google Sheets</li><li>Apps Script</li><li>Framer</li><li>systeme.io</li><li>Telegram</li><li>Gmail</li><li aria-hidden="true">GoHighLevel</li><li aria-hidden="true">Reputation Management</li><li aria-hidden="true">n8n</li><li aria-hidden="true">Make.com</li><li aria-hidden="true">Klaviyo</li><li aria-hidden="true">Tally</li><li aria-hidden="true">Google Sheets</li><li aria-hidden="true">Apps Script</li><li aria-hidden="true">Framer</li><li aria-hidden="true">systeme.io</li><li aria-hidden="true">Telegram</li><li aria-hidden="true">Gmail</li></ul>
+  </section>
+
+
+  <section class="faq section gutter" id="faq">
+    <p class="eyebrow">Questions</p>
+    <h2 class="section-title display split">Before you ask.</h2>
+    <div class="faq-list">
+      <details class="fade" data-stagger="70">
+        <summary>Do I have to change my booking system?<span class="plus" aria-hidden="true"></span></summary>
+        <p class="answer">Usually not. I work with the tools you already use wherever possible. On the free call we look at your setup and decide what fits.</p>
+      </details>
+      <details class="fade" data-stagger="70">
+        <summary>Do I need GoHighLevel?<span class="plus" aria-hidden="true"></span></summary>
+        <p class="answer">Not always. For text-back, review requests and win-back, GoHighLevel keeps everything in one place. If you already use another system, we check what works with it first.</p>
+      </details>
+      <details class="fade" data-stagger="70">
+        <summary>How much does it cost?<span class="plus" aria-hidden="true"></span></summary>
+        <p class="answer">Every package has one fixed price, agreed before any work starts. No hourly billing and no surprise invoices.</p>
+      </details>
+      <details class="fade" data-stagger="70">
+        <summary>How long does setup take?<span class="plus" aria-hidden="true"></span></summary>
+        <p class="answer">It depends on the package and your current tools. The timeline is agreed upfront in your plan, so you know the go-live date before we start.</p>
+      </details>
+      <details class="fade" data-stagger="70">
+        <summary>Will my team know how to use it?<span class="plus" aria-hidden="true"></span></summary>
+        <p class="answer">Yes. You get a recorded walkthrough of everything I built, so your front desk can run it without me.</p>
+      </details>
+      <details class="fade" data-stagger="70">
+        <summary>Where are your clients based?<span class="plus" aria-hidden="true"></span></summary>
+        <p class="answer">I work remotely with salons, spas and gyms in the US, UK and Australia, and plan calls around your business hours.</p>
+      </details>
+    </div>
+  </section>
+
   <footer class="contact gutter" id="contact">
-    <p class="eyebrow">Let's Talk</p>
-    <h2 class="section-title display split">Your next booking is already in your phone.</h2>
+    <div class="contact-grid">
+    <div class="contact-intro">
+    <div class="contact-head">
+      <div>
+        <p class="eyebrow">Let's Talk</p>
+        <h2 class="section-title display split">Your next booking is already in your phone.</h2>
+      </div>
+      <svg class="bloom" viewBox="0 0 300 300" aria-hidden="true" focusable="false"><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:0.00s" d="M150 296 C 150 250, 148 190, 150 116"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:0.15s" d="M150 280 C 130 240, 100 215, 78 186"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:0.30s" d="M150 270 C 175 235, 205 210, 232 178"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:0.45s" d="M150 236 C 168 222, 186 222, 200 212 C 188 232, 168 238, 150 236"/><g transform="translate(150 108) scale(1)"><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:0.50s" transform="rotate(0)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:0.62s" transform="rotate(72)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:0.74s" transform="rotate(144)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:0.86s" transform="rotate(216)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:0.98s" transform="rotate(288)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><circle class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.10s" r="8"/></g><g transform="translate(74 160) scale(0.62)"><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.10s" transform="rotate(0)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.20s" transform="rotate(72)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.30s" transform="rotate(144)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.40s" transform="rotate(216)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.50s" transform="rotate(288)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><circle class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.60s" r="8"/></g><g transform="translate(236 150) scale(0.5)"><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.60s" transform="rotate(0)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.70s" transform="rotate(72)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.80s" transform="rotate(144)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:1.90s" transform="rotate(216)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><path class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:2.00s" transform="rotate(288)" d="M0 0 C -20 -30, -16 -67, 0 -81 C 16 -67, 20 -30, 0 0"/><circle class="d" pathLength="1" vector-effect="non-scaling-stroke" style="transition-delay:2.10s" r="8"/></g></svg>
+    </div>
     <p class="contact-body fade">Tell me a little about your business. You'll get an email with my booking link straight away, then a personal note from me.</p>
+    </div>
+    <div class="contact-form">
     <div class="form-slot fade" id="tally-slot" data-tally-id="WJJbze">
       <div class="form-ph"><span>Inquiry form loads here. <a href="https://tally.so/r/WJJbze" target="_blank" rel="noreferrer noopener">Open the form</a></span></div>
     </div>
@@ -426,6 +603,8 @@ h2,h3{text-wrap:balance}
     <dl class="contact-lines">
       <div><dt class="label">Email</dt><dd><a href="mailto:workwithmaribloom@gmail.com">workwithmaribloom@gmail.com</a></dd></div>
     </dl>
+    </div>
+    </div>
 
     <div class="footer-bar">
       <div class="fb-left">
@@ -439,7 +618,7 @@ h2,h3{text-wrap:balance}
           <li><a href="https://www.onlinejobs.ph" target="_blank" rel="noreferrer noopener">OnlineJobs.ph</a></li>
         </ul>
       </nav>
-      <p class="fb-right copy">© <span id="year">2026</span> Maribeth Bañas</p>
+      <p class="fb-right copy">© <span id="year">2026</span> Maribeth Bañas · <a href="/privacy">Privacy Policy</a></p>
     </div>
   </footer>
 </main>
@@ -505,7 +684,7 @@ h2,h3{text-wrap:balance}
   staggerGroups();
 
   /* in-view reveals, once */
-  var targets=document.querySelectorAll('.fade:not(#hero-desc):not(#scroll-cue), .split');
+  var targets=document.querySelectorAll('.fade:not(#hero-desc):not(#scroll-cue):not(#hero-cta), .split, .bloom');
   function reveal(el){if(el.classList.contains('split'))lineDelays(el);el.classList.add('in');}
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){reveal(e.target);io.unobserve(e.target);}});},{threshold:0}):null;
   function arm(){targets.forEach(function(t){io?io.observe(t):reveal(t);});
@@ -515,8 +694,15 @@ h2,h3{text-wrap:balance}
   var slot=document.getElementById('tally-slot'),fid=slot.getAttribute('data-tally-id');
   var inPreview=/claude|anthropic/i.test(location.hostname)||location.protocol==='blob:'||location.protocol==='about:';
   if(fid&&!inPreview){var f=document.createElement('iframe');
-    f.src='https://tally.so/embed/'+encodeURIComponent(fid)+'?alignLeft=1&hideTitle=1&dynamicHeight=1';
-    f.title='Inquiry form';f.loading='lazy';f.setAttribute('data-tally-src',f.src);
+    var tsrc='https://tally.so/embed/'+encodeURIComponent(fid)+'?alignLeft=1&hideTitle=1&dynamicHeight=1';
+    f.setAttribute('data-tally-src',tsrc);f.title='Inquiry form';f.setAttribute('scrolling','no');
+    setTimeout(function(){if(!f.getAttribute('src'))f.src=tsrc;},2500);
+    addEventListener('message',function(e){
+      if(!/tally\.so$/.test((e.origin||'').replace(/^https?:\/\//,'')))return;
+      var d=e.data;try{if(typeof d==='string')d=JSON.parse(d);}catch(x){return;}
+      var h=d&&d.payload&&(d.payload.height||d.payload.formHeight);
+      if(typeof h==='number'&&h>200){f.style.height=Math.ceil(h)+'px';}
+    });
     slot.innerHTML='';slot.appendChild(f);
     var ts=document.createElement('script');ts.src='https://tally.so/widgets/embed.js';ts.async=true;
     ts.onload=function(){try{window.Tally&&Tally.loadEmbeds();}catch(e){}};document.body.appendChild(ts);}
@@ -527,6 +713,7 @@ h2,h3{text-wrap:balance}
     setTimeout(function(){document.querySelector('.portrait-wrap').classList.add('in');},base+150);
     setTimeout(function(){document.getElementById('roles').classList.add('in');},base+200);
     setTimeout(function(){document.getElementById('hero-desc').classList.add('in');},base+400);
+    setTimeout(function(){document.getElementById('hero-cta').classList.add('in');},base+650);
     setTimeout(function(){document.getElementById('scroll-cue').classList.add('in');},base+900);
   }
 
