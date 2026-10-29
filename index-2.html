@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maribeth Bañas | Win-Back Automation for Salons, Spas &amp; Gyms</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Maribeth Bañas builds missed-call text-back, review requests and win-back automation for salons, spas and gyms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: cinematic one-pager. Giant condensed name behind a portrait cutout, editorial hairline sections, rem grid scaled to viewport. Single dark theme by design. */
+:root{
+  --bg:#111019; --fg:#F8F4FF; --surface:#1A1824; --surface-2:#221F30;
+  --muted:#A49EB8; --line:rgba(248,244,255,.1); --line-strong:rgba(248,244,255,.22);
+  --accent:#9B6DFF;
+  --font-display:"Anton","Impact","Arial Narrow",sans-serif;
+  --font-sans:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gutter:2.5rem; --section:9rem;
+  --fs-hero:28rem; --fs-mega:13rem; --fs-display:7.5rem; --fs-h1:5rem; --fs-h2:3.25rem; --fs-h3:1.75rem;
+  --fs-lead:1.375rem; --fs-body:1.0625rem; --fs-eyebrow:.8125rem;
+  --ease-expo:cubic-bezier(.16,1,.3,1); --ease-quart:cubic-bezier(.165,.84,.44,1); --ease-wipe:cubic-bezier(.22,1,.36,1);
+  color-scheme:dark;
+}
+html{font-size:16px;background:var(--bg)}
+@media (max-width:1920px){html{font-size:.833333vw}}
+@media (max-width:1440px){html{font-size:1.111111vw}}
+@media (max-width:1024px){html{font-size:1.5625vw}}
+@media (max-width:640px){html{font-size:4.444444vw} :root{--gutter:16px}}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+img{display:block;max-width:100%}
+ul,ol{list-style:none}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-sans);font-size:var(--fs-body);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+::selection{background:var(--accent);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+
+.gutter{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+.section{padding-block:var(--section)}
+.display{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:-.01em}
+.eyebrow{display:flex;align-items:center;gap:.75rem;font-size:var(--fs-eyebrow);line-height:1.2;font-weight:500;text-transform:uppercase;letter-spacing:.22em;color:var(--muted)}
+.eyebrow::before{content:"";width:.5rem;height:.5rem;border-radius:9999px;background:var(--accent);flex:none}
+.label{font-size:var(--fs-eyebrow);line-height:1.2;text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
+h2,h3{text-wrap:balance}
+
+/* ---------- reveal system (only hides when JS is running) ---------- */
+.js .fade{opacity:0;transform:translateY(16px);transition:opacity .52s var(--ease-expo),transform .52s var(--ease-expo)}
+.js .fade.slow{transform:translateY(60px);transition-duration:.62s}
+.js .fade.in{opacity:1;transform:none}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-block:.08em;margin-block:-.08em}
+.wi{display:inline-block}
+.js .split .wi{transform:translateY(110%);opacity:0;transition:transform .85s var(--ease-expo),opacity .85s var(--ease-expo)}
+.js .split.in .wi{transform:none;opacity:1}
+
+/* ---------- preloader ---------- */
+.preloader{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:.75rem;padding:var(--gutter);padding-bottom:max(var(--gutter),env(safe-area-inset-bottom,0px));background:var(--bg);transition:transform .65s var(--ease-wipe)}
+.preloader.wipe{transform:translateY(-100%)}
+.preloader.done{pointer-events:none;visibility:hidden}
+.pre-brand{font-size:var(--fs-h3);line-height:1}
+.pre-count{font-size:var(--fs-display);line-height:1;font-variant-numeric:tabular-nums}
+.pre-count span{color:var(--accent)}
+.preloader .pre-brand,.preloader .pre-count{transition:opacity .3s ease-out}
+.preloader.fading .pre-brand,.preloader.fading .pre-count{opacity:0}
+.no-js .preloader{display:none}
+@media (min-width:640px){.preloader{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:1rem}}
+
+/* ---------- nav ---------- */
+.site-header{position:fixed;inset-inline:0;top:0;z-index:50;pointer-events:none;padding-top:env(safe-area-inset-top,0px)}
+.site-header{transition:background-color .35s ease-out}
+.site-header.scrolled{background:var(--bg);box-shadow:0 1px 0 var(--line)}
+.site-nav{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;padding-block:1.5rem}
+.logo{display:flex;align-items:center;gap:.75rem}
+.mono{display:grid;place-items:center;width:2.5rem;height:2.5rem;min-width:44px;min-height:44px;border-radius:9999px;border:1px solid var(--line-strong);font-weight:600;letter-spacing:-.01em;font-size:.875rem;background:color-mix(in srgb,var(--bg) 60%,transparent)}
+.logo-name{display:none;font-size:var(--fs-eyebrow);font-weight:500;text-transform:uppercase;letter-spacing:.22em;color:var(--muted)}
+.nav-links{display:none;gap:2.5rem}
+.nav-links a{position:relative;font-size:var(--fs-eyebrow);font-weight:500;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-.25rem;height:1px;width:0;background:var(--accent);transition:width .35s var(--ease-expo)}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--fg)}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{width:100%}
+.nav-links a.cta{color:var(--fg)}
+.burger{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.375rem;width:44px;height:44px}
+.burger span{display:block;width:1.5rem;height:.125rem;background:var(--fg);transition:transform .35s var(--ease-expo),opacity .25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(.5rem) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-.5rem) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:45;background:var(--bg);display:flex;flex-direction:column;justify-content:center;opacity:0;visibility:hidden;transition:opacity .45s ease-out,visibility 0s .45s}
+.mobile-menu.open{opacity:1;visibility:visible;transition:opacity .45s ease-out}
+.mobile-menu ul{display:flex;flex-direction:column;gap:1rem}
+.mobile-menu a{display:block;font-size:var(--fs-h2);line-height:1;padding-block:.25rem;opacity:0;transform:translateY(48px);transition:opacity .42s ease-out,transform .42s ease-out}
+.mobile-menu.open a{opacity:1;transform:none}
+@media (min-width:640px){.logo-name{display:block}}
+@media (min-width:768px){.nav-links{display:flex}.burger,.mobile-menu{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;display:flex;flex-direction:column;min-height:100svh;min-height:max(100svh,40rem);overflow:hidden}
+.hero-top{position:relative;z-index:30;display:flex;flex-direction:column;gap:2rem;padding-top:7rem}
+.roles{font-size:var(--fs-h3);line-height:1.05}
+.roles .line{display:block;overflow:hidden;padding-block:.06em;margin-block:-.06em}
+.roles .li{display:block}
+.js .roles .li{transform:translateY(110%);opacity:0;transition:transform .76s var(--ease-expo),opacity .76s var(--ease-expo)}
+.js .roles.in .li{transform:none;opacity:1}
+.hero-desc{max-width:26rem;color:var(--muted)}
+.portrait-wrap{position:absolute;z-index:20;bottom:0;left:50%;transform:translateX(-50%);height:62svh;width:auto;pointer-events:none;display:flex;align-items:flex-end;justify-content:center}
+.portrait{height:100%;width:auto;max-width:96vw;object-fit:contain;object-position:center bottom;pointer-events:auto}
+.portrait.liquid{filter:url(#liquid)}
+.js .portrait-wrap{opacity:0;transform:translate(-50%,10%);transition:opacity 1.1s var(--ease-expo),transform 1.4s var(--ease-expo)}
+.js .portrait-wrap.in{opacity:1;transform:translate(-50%,0)}
+.hero-fade{position:absolute;inset-inline:0;bottom:0;z-index:25;height:26vh;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none}
+.hero-name{position:absolute;inset-inline:0;bottom:0;z-index:10;transform:translateY(6%);display:flex;flex-direction:column;align-items:center;font-size:min(var(--fs-hero),34vw,44svh);line-height:.78;color:var(--accent)}
+.hero-name .line{display:block;white-space:nowrap;overflow:hidden;padding-block:.07em;margin-block:-.07em}
+.ch{display:inline-block}
+.js .hero-name .ch{transform:translateY(100%);opacity:0;transition:transform .9s var(--ease-expo),opacity .9s var(--ease-expo)}
+.js .hero-name.in .ch{transform:none;opacity:1}
+.scroll-cue{position:absolute;z-index:30;bottom:max(2rem,env(safe-area-inset-bottom,0px));left:max(var(--gutter),env(safe-area-inset-left,0px));display:flex;align-items:center;gap:.75rem;font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted)}
+.scroll-cue::before{content:"";width:2.5rem;height:1px;background:var(--accent)}
+@media (max-width:639px){
+  .hero{min-height:0}
+  .hero-top{padding-top:6rem}
+  .hero::after{content:"";display:block;height:calc(min(118vw,34rem) + 50vw)}
+  .portrait-wrap{height:min(118vw,34rem)}
+  .hero-name{z-index:10;bottom:calc(min(118vw,34rem) - 7vw);transform:none}
+  .scroll-cue{display:none}
+}
+@media (min-width:640px){
+  .hero-top{flex-direction:row;align-items:flex-start;justify-content:space-between;padding-top:8rem}
+  .roles{font-size:var(--fs-h2)}
+  .hero-desc{text-align:right}
+  .portrait-wrap{height:86svh}
+}
+
+/* ---------- marquee ---------- */
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding-block:2rem}
+.track{display:flex;width:max-content;flex-wrap:nowrap;animation:marquee 22s linear infinite}
+.track li{display:flex;align-items:center;font-size:var(--fs-h2);line-height:1;white-space:nowrap}
+.track li::after{content:"";margin-inline:2rem;width:.625rem;height:.625rem;border-radius:9999px;background:var(--accent)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- story ---------- */
+.story-grid{display:grid;gap:3rem}
+.section-title{margin-top:1.5rem;font-size:var(--fs-h2);line-height:.95}
+.story .section-title{max-width:16ch}
+.story-body{margin-top:2rem;max-width:46ch;font-size:var(--fs-lead);line-height:1.45;color:var(--muted)}
+.principles li{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:1.5rem;border-top:1px solid var(--line);padding-block:2rem}
+.principles li:last-child{border-bottom:1px solid var(--line)}
+.p-num{font-size:var(--fs-h3);line-height:1.15;font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
+.p-title{font-size:var(--fs-h3);line-height:1.15;font-weight:600;letter-spacing:-.01em}
+.p-text{margin-top:.75rem;max-width:44ch;color:var(--muted)}
+
+/* ---------- work ---------- */
+.head-row{display:flex;flex-direction:column;gap:1.5rem}
+.work .section-title{max-width:14ch}
+.work-list{margin-top:4rem;display:grid;grid-template-columns:minmax(0,1fr);column-gap:var(--gutter);row-gap:4rem}
+.frame{position:relative;width:100%;max-width:100%;aspect-ratio:16/11;border-radius:.125rem;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.frame span{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted);text-align:center;padding:1rem}
+.featured .frame{aspect-ratio:16/8}
+.card-row{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:1.25rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem}
+.card-name{font-size:var(--fs-h3);line-height:1.15;font-weight:600;letter-spacing:-.01em;transition:color .34s ease-out}
+.card:hover .card-name{color:var(--accent)}
+.card-kind{margin-top:.5rem}
+.status{flex:none;text-align:right;font-size:var(--fs-eyebrow);line-height:1.4;font-weight:500;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);max-width:12rem}
+.facts{margin-top:1.25rem;display:grid;gap:1rem}
+.facts div{display:grid;gap:.25rem}
+.facts dt{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted)}
+.facts dd{max-width:52ch}
+.facts .tools{color:var(--muted)}
+.ph{color:var(--muted);font-style:italic}
+@media (min-width:768px){
+  .work-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .featured{grid-column:1 / -1}
+  .featured .card-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gutter)}
+  .work-list .offset{margin-top:6rem}
+}
+
+/* ---------- system ---------- */
+.system .section-title{max-width:18ch}
+.steps{margin-top:4rem;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+.step{display:flex;flex-direction:column;gap:1rem;border-bottom:1px solid var(--line);padding-block:2.5rem}
+.step-num{font-size:var(--fs-display);line-height:1;transition:color .34s ease-out}
+.step:hover .step-num{color:var(--accent)}
+.step-name{font-size:var(--fs-body);text-transform:uppercase;letter-spacing:.14em;font-weight:600}
+.step-text{max-width:26ch;color:var(--muted)}
+@media (min-width:640px){
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step:nth-child(2n){border-left:1px solid var(--line);padding-left:2rem}
+}
+@media (min-width:1024px){
+  .steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .step{padding-block:3rem}
+  .step:nth-child(n+2){border-left:1px solid var(--line);padding-left:2rem}
+}
+
+/* ---------- contact ---------- */
+.contact{padding-top:var(--section)}
+.contact .section-title{font-size:var(--fs-h1);max-width:18ch}
+.contact-body{margin-top:2rem;max-width:44ch;font-size:var(--fs-lead);line-height:1.45;color:var(--muted)}
+.book{margin-top:3rem;display:inline-flex;align-items:baseline;gap:.75rem;font-size:var(--fs-h1);line-height:1;font-weight:600;letter-spacing:-.01em;transition:transform .34s ease-out,color .34s ease-out}
+.book .arrow{color:var(--accent)}
+.book:hover,.book:focus-visible{transform:translateX(14px);color:var(--accent)}
+.contact-lines{margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem 2.5rem}
+.contact-lines div{display:grid;gap:.25rem}
+.contact-lines dd{user-select:all}
+.footer-bar{margin-top:var(--section);border-top:1px solid var(--line);padding-block:3rem;padding-bottom:max(3rem,env(safe-area-inset-bottom,0px));display:grid;gap:2.5rem}
+.sig{font-size:var(--fs-h2);line-height:1}
+.sig-sub{margin-top:1rem;font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted)}
+.social{display:grid;gap:.5rem}
+.social a{display:inline-flex;align-items:center;color:var(--muted);transition:color .3s;min-height:44px}
+.social a::before{content:"";width:0;height:1px;background:var(--accent);margin-right:0;transition:width .35s var(--ease-expo),margin .35s var(--ease-expo)}
+.social a:hover,.social a:focus-visible{color:var(--fg)}
+.social a:hover::before,.social a:focus-visible::before{width:1.5rem;margin-right:.75rem}
+.copy{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
+@media (min-width:640px){
+  .head-row{flex-direction:row;align-items:flex-end;justify-content:space-between}
+  .section-title{font-size:var(--fs-h1)}
+  .contact .section-title{font-size:var(--fs-display)}
+  .book{gap:1rem}
+}
+@media (min-width:1024px){
+  .story-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gutter)}
+  .story-left,.story-right{grid-column:span 6}
+  .story-right{padding-top:.5rem}
+  .footer-bar{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .fb-left{grid-column:span 6}.fb-mid{grid-column:span 3}.fb-right{grid-column:span 3;text-align:right}
+}
+.form-slot{margin-top:3rem;max-width:44rem;border-top:1px solid var(--line);padding-top:2rem}
+.form-slot iframe{display:block;width:100%;border:0;min-height:30rem;background:var(--bg);color-scheme:light}
+.form-ph{display:grid;place-items:center;min-height:22rem;background:var(--surface);border:1px solid var(--line);border-radius:.125rem}
+.form-ph span{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted);padding:1rem;text-align:center}
+.form-note{margin-top:1.5rem;max-width:44rem;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){
+  .preloader{display:none}
+  .track{animation:none}
+  .js .fade,.js .split .wi,.js .roles .li,.js .hero-name .ch,.mobile-menu a,.js .portrait-wrap{opacity:1!important;transform:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="liquid" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence id="liquid-turb" type="fractalNoise" baseFrequency="0.009" numOctaves="2" result="noise"/>
+    <feDisplacementMap id="liquid-map" in="SourceGraphic" in2="noise" scale="1"/>
+  </filter>
+</svg>
+
+<div class="preloader display" id="preloader" aria-hidden="true">
+  <p class="pre-brand">Maribloom</p>
+  <p class="pre-count"><b id="pre-num" style="font-weight:400">0</b><span>%</span></p>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav gutter" aria-label="Main">
+    <a class="logo" href="#top" aria-label="Maribloom, back to top">
+      <span class="mono">MB</span>
+      <span class="logo-name">Maribeth Bañas</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#story">Story</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#system">System</a></li>
+      <li><a href="#contact" class="cta">Start here</a></li>
+    </ul>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+<div class="mobile-menu gutter" id="mobile-menu" aria-hidden="true">
+  <ul class="display">
+    <li><a href="#story" style="transition-delay:.12s">Story</a></li>
+    <li><a href="#work" style="transition-delay:.18s">Work</a></li>
+    <li><a href="#system" style="transition-delay:.24s">System</a></li>
+    <li><a href="#contact" style="transition-delay:.30s">Start here</a></li>
+  </ul>
+</div>
+
+<main style="position:relative;width:100%;overflow-x:hidden">
+
+  <section class="hero" id="top">
+    <div class="hero-top gutter">
+      <h2 class="roles display" id="roles" aria-label="Text-back, reviews, win-back, rebooked">
+        <span class="line"><span class="li">Text-back</span></span>
+        <span class="line"><span class="li" style="transition-delay:.08s">Reviews</span></span>
+        <span class="line"><span class="li" style="transition-delay:.16s">Win-back</span></span>
+        <span class="line"><span class="li" style="transition-delay:.24s">Rebooked</span></span>
+      </h2>
+      <p class="hero-desc fade" id="hero-desc">Missed calls, quiet regulars, too few reviews. I build the automation that brings clients back to salons, spas and gyms.</p>
+    </div>
+
+    <h1 class="hero-name display" id="hero-name" aria-label="Maribloom">
+      <span class="line" data-letters>Mari</span>
+      <span class="line" data-letters>Bloom</span>
+    </h1>
+
+    <div class="portrait-wrap">
+      <img class="portrait" id="portrait" src="portrait.webp" alt="Maribeth Bañas, arms crossed, wearing glasses and a black blazer" width="900" height="1124" fetchpriority="high">
+    </div>
+    <div class="hero-fade" aria-hidden="true"></div>
+    <p class="scroll-cue fade" id="scroll-cue">Scroll to enter</p>
+  </section>
+
+  <section class="marquee" aria-label="Operating principles">
+    <ul class="track display">
+      <li>Every Call Answered</li><li>Regulars Come Back</li><li>Reviews On Autopilot</li><li>Fewer Empty Slots</li><li>Systems Over Hustle</li>
+      <li aria-hidden="true">Every Call Answered</li><li aria-hidden="true">Regulars Come Back</li><li aria-hidden="true">Reviews On Autopilot</li><li aria-hidden="true">Fewer Empty Slots</li><li aria-hidden="true">Systems Over Hustle</li>
+    </ul>
+  </section>
+
+  <section class="story section gutter" id="story">
+    <div class="story-grid">
+      <div class="story-left">
+        <p class="eyebrow">The Story</p>
+        <h2 class="section-title display split">Fifteen years of making sure nothing gets missed.</h2>
+        <p class="story-body fade">For more than fifteen years I've run busy households in Malaysia, Singapore and Dubai: the schedules, the reminders, the small follow-ups that keep everything moving without anyone noticing. Now I build that same quiet reliability for salons, spas and gyms. My automations answer every missed call, ask happy clients for reviews, and bring regulars back before they drift away.</p>
+      </div>
+      <ul class="principles story-right">
+        <li class="fade" data-stagger="90"><span class="p-num">01</span><div><h3 class="p-title">A missed call is a lost booking</h3><p class="p-text">When nobody picks up, people book with whoever does. The first reply should go out on its own, while they still want the appointment.</p></div></li>
+        <li class="fade" data-stagger="90"><span class="p-num">02</span><div><h3 class="p-title">Regulars are the business</h3><p class="p-text">Bringing back a client who already likes you is easier than finding a new one. Win-back comes before ads.</p></div></li>
+        <li class="fade" data-stagger="90"><span class="p-num">03</span><div><h3 class="p-title">Built for a busy front desk</h3><p class="p-text">If your team can't run it on a packed Saturday, it doesn't work. I keep every system simple enough to run without me.</p></div></li>
+        <li class="fade" data-stagger="90"><span class="p-num">04</span><div><h3 class="p-title">Proof over promises</h3><p class="p-text">I don't quote results I can't show. I show you exactly what I built, how it works and what it costs.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="work section gutter" id="work">
+    <div class="head-row">
+      <div>
+        <p class="eyebrow">Selected Work</p>
+        <h2 class="section-title display split">Built for businesses that run on regulars.</h2>
+      </div>
+      <p class="label">03 / Projects</p>
+    </div>
+
+    <ul class="work-list">
+      <li class="featured fade slow">
+        <article class="card">
+          <div class="frame"><span>[Screenshots + Loom walkthrough]</span></div>
+          <div class="card-row">
+            <div>
+              <h3 class="card-name">Day Spa Win-Back System</h3>
+              <p class="card-kind label">Day spa · Mock build</p>
+            </div>
+            <p class="status">Concept build<br>In progress</p>
+          </div>
+          <div class="card-body">
+            <dl class="facts">
+              <div><dt>Problem</dt><dd>Past clients stop coming back, missed calls turn into lost bookings, and there are too few Google reviews.</dd></div>
+              <div><dt>What I built</dt><dd>Missed-call text-back, an automatic review request after every visit, and a 60–90 day win-back campaign.</dd></div>
+            </dl>
+            <dl class="facts">
+              <div><dt>Tools</dt><dd class="tools">GoHighLevel · SMS · Email</dd></div>
+              <div><dt>Result</dt><dd class="ph">[Add once the build is finished]</dd></div>
+            </dl>
+          </div>
+        </article>
+      </li>
+
+      <li class="fade slow">
+        <article class="card">
+          <div class="frame"><span>[Screenshot of the site + assessment]</span></div>
+          <div class="card-row">
+            <div>
+              <h3 class="card-name">Brighter Plans with Elein</h3>
+              <p class="card-kind label">Financial advisor</p>
+            </div>
+            <p class="status">Live<br>Real client</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Problem</dt><dd>Needed a way to capture prospects and follow up without doing it all by hand.</dd></div>
+            <div><dt>What I built</dt><dd>A site with a short assessment, automatic lead scoring, instant alerts, email follow-up and scheduled reminders.</dd></div>
+            <div><dt>Tools</dt><dd class="tools">Framer · Tally · Make.com · Google Sheets · Telegram · Gmail · Apps Script</dd></div>
+            <div><dt>Result</dt><dd>Fully working. The client is new, so there's no lead data yet.</dd></div>
+          </dl>
+        </article>
+      </li>
+
+      <li class="offset fade slow" data-delay="120">
+        <article class="card">
+          <div class="frame"><span>[Workflow screenshot]</span></div>
+          <div class="card-row">
+            <div>
+              <h3 class="card-name">[n8n workflow name]</h3>
+              <p class="card-kind label">Lead follow-up</p>
+            </div>
+            <p class="status">Training project<br>VA Talks</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Problem</dt><dd class="ph">[The problem this workflow solves]</dd></div>
+            <div><dt>What I built</dt><dd class="ph">[What the workflow does, in one sentence]</dd></div>
+            <div><dt>Tools</dt><dd class="tools">n8n · <span class="ph">[other tools]</span></dd></div>
+            <div><dt>Result</dt><dd class="ph">[What happens when it runs]</dd></div>
+          </dl>
+        </article>
+      </li>
+    </ul>
+  </section>
+
+  <section class="system section gutter" id="system">
+    <div class="head-row">
+      <div>
+        <p class="eyebrow">How It Works</p>
+        <h2 class="section-title display split">Four steps, running in the background.</h2>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="step fade" data-stagger="110"><span class="step-num display" aria-hidden="true">01</span><h3 class="step-name">Capture</h3><p class="step-text">Calls, forms and messages land in one inbox.</p></li>
+      <li class="step fade" data-stagger="110"><span class="step-num display" aria-hidden="true">02</span><h3 class="step-name">Respond</h3><p class="step-text">Missed calls get a text back automatically.</p></li>
+      <li class="step fade" data-stagger="110"><span class="step-num display" aria-hidden="true">03</span><h3 class="step-name">Book</h3><p class="step-text">Confirmations and reminders go out on their own.</p></li>
+      <li class="step fade" data-stagger="110"><span class="step-num display" aria-hidden="true">04</span><h3 class="step-name">Return</h3><p class="step-text">Review requests after each visit. Win-back messages at 60–90 days.</p></li>
+    </ol>
+  </section>
+
+  <footer class="contact gutter" id="contact">
+    <p class="eyebrow">Let's Talk</p>
+    <h2 class="section-title display split">Your next booking is already in your phone.</h2>
+    <p class="contact-body fade">Tell me a little about your business. You'll get an email with my booking link straight away, then a personal note from me.</p>
+    <div class="form-slot fade" id="tally-slot" data-tally-id="WJJbze">
+      <div class="form-ph"><span>Inquiry form loads here. <a href="https://tally.so/r/WJJbze" target="_blank" rel="noreferrer noopener">Open the form</a></span></div>
+    </div>
+    <p class="form-note label">This form runs on the same kind of automation I build for clients.</p>
+    <dl class="contact-lines">
+      <div><dt class="label">Email</dt><dd><a href="mailto:workwithmaribloom@gmail.com">workwithmaribloom@gmail.com</a></dd></div>
+    </dl>
+
+    <div class="footer-bar">
+      <div class="fb-left">
+        <p class="sig display">Maribloom</p>
+        <p class="sig-sub">Automation for businesses that run on regulars.</p>
+      </div>
+      <nav class="fb-mid" aria-label="Social">
+        <ul class="social">
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener">LinkedIn</a></li>
+          <li><a href="https://www.upwork.com" target="_blank" rel="noreferrer noopener">Upwork</a></li>
+          <li><a href="https://www.onlinejobs.ph" target="_blank" rel="noreferrer noopener">OnlineJobs.ph</a></li>
+        </ul>
+      </nav>
+      <p class="fb-right copy">© <span id="year">2026</span> Maribeth Bañas</p>
+    </div>
+  </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  /* adaptive grid above 1920px */
+  function grid(){var w=innerWidth,r=((1920-w)/1920)*100*0.6666,s=16-(16*r)/100;
+    if(s>16)root.style.fontSize=s+'px';else root.style.removeProperty('font-size');}
+  grid();addEventListener('resize',grid);
+
+  /* smooth scroll */
+  var lenis=null;
+  try{ if(!reduce&&window.Lenis){lenis=new Lenis({smoothWheel:true});
+    (function raf(t){lenis.raf(t);requestAnimationFrame(raf);})(performance.now());} }catch(e){lenis=null;}
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){var id=a.getAttribute('href');var el=id==='#top'?document.body:document.querySelector(id);
+      if(!el)return;e.preventDefault();closeMenu();
+      if(lenis)lenis.scrollTo(id==='#top'?0:el,{offset:0});else (id==='#top'?window:el).scrollIntoView?el.scrollIntoView({behavior:reduce?'auto':'smooth'}):scrollTo(0,0);});
+  });
+
+  /* nav background once scrolled */
+  var header=document.querySelector('.site-header');
+  function onScroll(){header.classList.toggle('scrolled',(window.scrollY||0)>40);}
+  addEventListener('scroll',onScroll,{passive:true});if(lenis)lenis.on('scroll',onScroll);onScroll();
+
+  /* mobile menu */
+  var burger=document.getElementById('burger'),menu=document.getElementById('mobile-menu');
+  function closeMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu');if(lenis)lenis.start();}
+  burger.addEventListener('click',function(){var open=!menu.classList.contains('open');
+    if(!open)return closeMenu();menu.classList.add('open');menu.setAttribute('aria-hidden','false');burger.setAttribute('aria-expanded','true');burger.setAttribute('aria-label','Close menu');if(lenis)lenis.stop();});
+
+  /* split hero letters */
+  var li=0;
+  document.querySelectorAll('[data-letters]').forEach(function(line,lineIdx){
+    var txt=line.textContent;line.textContent='';
+    txt.split('').forEach(function(c,i){var s=document.createElement('span');s.className='ch';s.textContent=c;
+      s.style.transitionDelay=(lineIdx*240+i*52)+'ms';line.appendChild(s);});
+    line.setAttribute('aria-hidden','true');
+  });
+
+  /* split headings into words; delay by visual line */
+  var splits=document.querySelectorAll('.split');
+  splits.forEach(function(h){var words=h.textContent.trim().split(/\s+/);h.setAttribute('aria-label',h.textContent.trim());h.textContent='';
+    words.forEach(function(w,i){var o=document.createElement('span');o.className='w';o.setAttribute('aria-hidden','true');
+      var inn=document.createElement('span');inn.className='wi';inn.textContent=w;o.appendChild(inn);h.appendChild(o);
+      if(i<words.length-1)h.appendChild(document.createTextNode(' '));});
+  });
+  function lineDelays(h){var tops=[];h.querySelectorAll('.w').forEach(function(w){var t=w.offsetTop,idx=tops.indexOf(t);
+    if(idx<0){tops.push(t);idx=tops.length-1;}w.firstChild.style.transitionDelay=(idx*90)+'ms';});}
+
+  /* stagger groups */
+  function staggerGroups(){var groups={};
+    document.querySelectorAll('[data-stagger]').forEach(function(el){var p=el.parentElement;var k=p.dataset.gid||(p.dataset.gid=Math.random().toString(36).slice(2));
+      groups[k]=(groups[k]||0);el.style.transitionDelay=(groups[k]*parseInt(el.dataset.stagger,10))+'ms';groups[k]++;});
+    document.querySelectorAll('[data-delay]').forEach(function(el){el.style.transitionDelay=el.dataset.delay+'ms';});}
+  staggerGroups();
+
+  /* in-view reveals, once */
+  var targets=document.querySelectorAll('.fade:not(#hero-desc):not(#scroll-cue), .split');
+  function reveal(el){if(el.classList.contains('split'))lineDelays(el);el.classList.add('in');}
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){reveal(e.target);io.unobserve(e.target);}});},{threshold:0}):null;
+  function arm(){targets.forEach(function(t){io?io.observe(t):reveal(t);});
+    setTimeout(function(){targets.forEach(function(t){t.classList.add('in');});},6000);}
+
+  /* Tally embed: set data-tally-id on #tally-slot (e.g. "w4XyZ1") */
+  var slot=document.getElementById('tally-slot'),fid=slot.getAttribute('data-tally-id');
+  var inPreview=/claude|anthropic/i.test(location.hostname)||location.protocol==='blob:'||location.protocol==='about:';
+  if(fid&&!inPreview){var f=document.createElement('iframe');
+    f.src='https://tally.so/embed/'+encodeURIComponent(fid)+'?alignLeft=1&hideTitle=1&dynamicHeight=1';
+    f.title='Inquiry form';f.loading='lazy';f.setAttribute('data-tally-src',f.src);
+    slot.innerHTML='';slot.appendChild(f);
+    var ts=document.createElement('script');ts.src='https://tally.so/widgets/embed.js';ts.async=true;
+    ts.onload=function(){try{window.Tally&&Tally.loadEmbeds();}catch(e){}};document.body.appendChild(ts);}
+
+  /* hero sequence */
+  function heroIn(base){
+    setTimeout(function(){document.getElementById('hero-name').classList.add('in');},base);
+    setTimeout(function(){document.querySelector('.portrait-wrap').classList.add('in');},base+150);
+    setTimeout(function(){document.getElementById('roles').classList.add('in');},base+200);
+    setTimeout(function(){document.getElementById('hero-desc').classList.add('in');},base+400);
+    setTimeout(function(){document.getElementById('scroll-cue').classList.add('in');},base+900);
+  }
+
+  /* preloader: ~1.2s total */
+  var pre=document.getElementById('preloader'),num=document.getElementById('pre-num');
+  function start(){
+    var ready=(document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve();
+    ready.then(function(){
+      if(reduce){pre.classList.add('done');document.querySelectorAll('.fade,.split,#roles,#hero-name,.portrait-wrap').forEach(function(e){e.classList.add('in');});return;}
+      if(lenis)lenis.stop();scrollTo(0,0);
+      var t0=performance.now(),D=800;
+      (function tick(now){var p=Math.min(1,(now-t0)/D);num.textContent=Math.round(p*100);
+        if(p<1)return requestAnimationFrame(tick);
+        pre.classList.add('fading');
+        setTimeout(function(){pre.classList.add('wipe');heroIn(250);},250);
+        setTimeout(function(){pre.classList.add('done');if(lenis)lenis.start();arm();},950);
+      })(t0);
+    });
+    setTimeout(function(){ if(!pre.classList.contains('done')){pre.classList.add('wipe','done');heroIn(0);arm();if(lenis)lenis.start();} },3500);
+  }
+  start();
+
+  /* liquid hover on portrait (desktop, fine pointer) */
+  var img=document.getElementById('portrait'),map=document.getElementById('liquid-map'),turb=document.getElementById('liquid-turb');
+  var canHover=window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 769px)').matches;
+  if(canHover&&!reduce){
+    var x=0,v=0,target=0,raf=null;
+    function step(){var k=140,c=13,dt=1/60;var a=k*(target-x)-c*v;v+=a*dt;x+=v*dt;
+      map.setAttribute('scale',(1+29*x).toFixed(2));turb.setAttribute('baseFrequency',(0.009+0.013*Math.max(0,x)).toFixed(4));
+      if(Math.abs(target-x)<0.001&&Math.abs(v)<0.001){x=target;raf=null;if(target===0)img.classList.remove('liquid');return;}
+      raf=requestAnimationFrame(step);}
+    function go(t){target=t;img.classList.add('liquid');if(!raf)raf=requestAnimationFrame(step);}
+    img.addEventListener('mouseenter',function(){go(1);});
+    img.addEventListener('mouseleave',function(){go(0);});
+  }
+})();
+</script>
+
+</body>
+</html>
