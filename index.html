@@ -174,6 +174,9 @@ h2,h3{text-wrap:balance}
 .frame span{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.22em;color:var(--muted);text-align:center;padding:1rem}
 .featured .frame{aspect-ratio:16/8}
 .frame img{width:100%;height:100%;object-fit:cover;display:block}
+.elein-video-frame{aspect-ratio:16/9}
+.elein-video{display:block;width:100%;height:100%;object-fit:contain;background:var(--bg)}
+.elein-video:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
 .card-row{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:1.25rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem}
 .card-name{font-size:var(--fs-h3);line-height:1.15;font-weight:600;letter-spacing:-.01em;transition:color .34s ease-out}
 .card:hover .card-name{color:var(--accent)}
@@ -742,7 +745,12 @@ h2,h3{text-wrap:balance}
 
       <li class="fade slow">
         <article class="card">
-          <div class="frame"><img src="work-elein.webp" alt="Placeholder: screenshot coming soon" width="1600" height="1100" loading="lazy" decoding="async"></div>
+          <div class="frame elein-video-frame">
+            <video class="elein-video" controls playsinline preload="none" poster="elein-video-thumbnail.png" width="1920" height="1080" aria-label="Brighter Plans with Elein — 84-second client case study">
+              <source src="elein-case-study.mp4" type="video/mp4">
+              <a href="elein-case-study.mp4">Watch the Brighter Plans with Elein case study (1 minute 24 seconds)</a>.
+            </video>
+          </div>
           <div class="card-row">
             <div>
               <h3 class="card-name">Brighter Plans with Elein</h3>
