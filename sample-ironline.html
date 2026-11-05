@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ironline Strength Club · Sample design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F100D;--panel:#181A15;--panel2:#20231C;--text:#F1F2EA;--muted:#A3A898;--lime:#D4FF3A;--line:#2C3026;--red:#FF5A36}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Archivo",system-ui,sans-serif;font-variation-settings:"wdth" 100;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.x{font-variation-settings:"wdth" 125;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.9}
+.c{font-variation-settings:"wdth" 70;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+.container{width:min(1180px,100% - 40px);margin:0 auto}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+
+.sample{background:var(--lime);color:#111;font-size:12px;text-align:center;padding:7px 12px;font-weight:500}
+header{position:sticky;top:0;z-index:30;background:rgba(15,16,13,.92);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:20px}
+.logo i{width:26px;height:26px;border:4px solid var(--lime);border-radius:50%;position:relative}
+.logo i::after{content:"";position:absolute;left:-9px;right:-9px;top:50%;height:4px;margin-top:-2px;background:var(--lime)}
+.links{display:flex;gap:26px;font-size:14px}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:6px;background:var(--lime);color:#111;font-weight:800;font-size:15px;text-decoration:none;text-transform:uppercase;letter-spacing:.02em;font-variation-settings:"wdth" 90;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.o{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.btn.o:hover{border-color:var(--text)}
+.nav .btn{padding:10px 16px;font-size:13px}
+@media(max-width:780px){.links{display:none}}
+
+/* hero */
+.hero{padding:64px 0 48px;position:relative}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.hero h1{font-size:clamp(52px,11vw,156px);margin-top:20px}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln span{display:block;transform:translateY(105%);transition:transform .9s cubic-bezier(.2,.9,.2,1)}
+.hero.in h1 .ln span{transform:none}
+.hero h1 .ln:nth-child(2) span{transition-delay:.12s}
+.hero h1 .ln:nth-child(3) span{transition-delay:.24s}
+.hero h1 .lime{color:var(--lime)}
+.hgrid{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:end;margin-top:28px}
+.hgrid p{font-size:18px;color:var(--muted);max-width:46ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.today{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.today h3{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);font-weight:500;margin-bottom:10px}
+.today h3 b{color:var(--lime);font-weight:600}
+.cl{display:grid;grid-template-columns:62px 1fr auto;gap:10px;align-items:center;padding:11px 0;border-top:1px solid var(--line);font-size:14px}
+.cl time{color:var(--muted);font-variant-numeric:tabular-nums}
+.cl span{font-weight:600}
+.cl em{font-style:normal;font-size:12px;color:var(--muted)}
+.cl.now span{color:var(--lime)}
+.cl.now em{color:#111;background:var(--lime);padding:2px 8px;border-radius:999px;font-weight:700}
+@media(max-width:900px){.hgrid{grid-template-columns:1fr}}
+
+/* ticker */
+.tk{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:16px 0;background:var(--panel)}
+.tk .t{display:flex;gap:36px;width:max-content;animation:mq 24s linear infinite;font-size:30px}
+.tk .t span{display:flex;align-items:center;gap:36px;white-space:nowrap}
+.tk .t span::after{content:"";width:22px;height:8px;background:var(--lime);border-radius:4px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{padding:96px 0}
+.h2{font-size:clamp(40px,6.2vw,84px)}
+.sub{color:var(--muted);font-size:17px;max-width:48ch;margin-top:16px}
+
+/* trial */
+.trial{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.day{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;position:relative;overflow:hidden;transition:border-color .3s}
+.day:hover{border-color:var(--lime)}
+.day .n{font-size:64px;color:var(--lime)}
+.day .n small{font-size:18px;color:var(--muted);margin-left:6px;font-variation-settings:"wdth" 100;font-weight:600}
+.day h4{font-size:20px;font-weight:700;margin-top:10px}
+.day p{color:var(--muted);font-size:15px;margin-top:6px}
+.day .sms{margin-top:18px;background:var(--panel2);border-radius:12px 12px 12px 4px;padding:10px 12px;font-size:13px;color:var(--text)}
+.day .sms b{display:block;font-size:11px;color:var(--muted);font-weight:600;margin-bottom:3px;letter-spacing:.04em;text-transform:uppercase}
+@media(max-width:900px){.trial{grid-template-columns:1fr}}
+
+/* classes */
+.classes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.cls{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;min-height:240px;transition:transform .3s,background .3s}
+.cls:hover{transform:translateY(-4px);background:var(--panel2)}
+.cls h4{font-size:30px}
+.cls p{color:var(--muted);font-size:14px;margin-top:8px;flex:1}
+.int{display:flex;gap:4px;margin-top:18px}
+.int i{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.int i.on{background:var(--lime)}
+.cls small{color:var(--muted);font-size:12px;margin-top:8px;display:flex;justify-content:space-between}
+@media(max-width:960px){.classes{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.classes{grid-template-columns:1fr}}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.plan{border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column}
+.plan h4{font-size:22px}
+.plan .p{margin-top:16px;font-size:58px}
+.plan .p small{font-size:16px;color:var(--muted);font-variation-settings:"wdth" 100;font-weight:500;text-transform:none;letter-spacing:0}
+.plan ul{list-style:none;margin:18px 0 26px;display:grid;gap:10px;flex:1}
+.plan li{display:flex;gap:10px;font-size:15px;color:var(--muted)}
+.plan li::before{content:"";width:14px;height:14px;margin-top:4px;flex:none;border-radius:3px;background:var(--line)}
+.plan.hot{background:var(--lime);color:#111;border-color:var(--lime)}
+.plan.hot li{color:#2A2E1F}
+.plan.hot li::before{background:#111}
+.plan.hot .p small{color:#3A3F2B}
+.plan.hot .btn{background:#111;color:var(--lime)}
+.plan .badge{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:#111;color:var(--lime);padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.plan .btn{justify-content:center}
+.fine{font-size:13px;color:var(--muted);margin-top:16px}
+@media(max-width:900px){.plans{grid-template-columns:1fr}}
+
+/* form */
+.join{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.join>*{min-width:0}
+form{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,4vw,34px)}
+.lb{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chips label{position:relative;cursor:pointer}
+.chips input{position:absolute;opacity:0}
+.chips span{display:block;padding:10px 14px;border:1.5px solid var(--line);border-radius:999px;font-size:14px;font-weight:600;transition:.2s}
+.chips input:checked+span{background:var(--lime);border-color:var(--lime);color:#111}
+.chips input:focus-visible+span{outline:2px solid var(--lime);outline-offset:2px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;min-width:0}
+.f label{font-size:14px;font-weight:600}
+.f input{font:inherit;width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text)}
+.f input:focus{outline:none;border-color:var(--lime)}
+.ck{display:flex;gap:10px;font-size:13px;color:var(--muted);margin:4px 0 20px;align-items:flex-start}
+form .btn{width:100%;justify-content:center}
+.ok{display:none;padding:30px 4px}
+.ok .x{font-size:52px;color:var(--lime)}
+.ok p{color:var(--muted);margin-top:12px}
+form.sent .fields{display:none}
+form.sent .ok{display:block;animation:fi .5s}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+.num{border-top:2px solid var(--lime);padding-top:12px}
+.num b{font-size:40px;display:block}
+.num span{font-size:13px;color:var(--muted)}
+@media(max-width:900px){.join{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+
+/* faq */
+details{border-bottom:1px solid var(--line);max-width:820px}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:22px 0;font-size:19px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--lime);font-size:26px;line-height:1;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding-bottom:22px;max-width:64ch}
+
+footer{border-top:1px solid var(--line);padding:56px 0 30px}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+footer h5{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
+footer p{font-size:14px}
+.legal{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--muted)}
+@media(max-width:760px){.fg{grid-template-columns:1fr}}
+
+.mbar{display:none}
+@media(max-width:760px){.mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;transform:translateY(150%);transition:transform .4s}.mbar.show{transform:none}.mbar .btn{width:100%;justify-content:center}}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .ln span{transform:none}}
+</style>
+</head>
+<body>
+
+<div class="sample"><b>Sample design</b> · Ironline Strength Club is a fictional business · Design by Maribloom</div>
+
+<header>
+  <div class="container nav">
+    <a class="logo x" href="#top"><i></i>Ironline</a>
+    <nav class="links" aria-label="Main"><a href="#trial">Free trial</a><a href="#classes">Classes</a><a href="#plans">Memberships</a></nav>
+    <a class="btn" href="#join">Start free week</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="container hero" id="hero">
+    <span class="tag"><i></i>Strength gym · West End, Brisbane</span>
+    <h1 class="x"><span class="ln"><span>Lift with</span></span><span class="ln"><span>people who</span></span><span class="ln"><span class="lime">notice.</span></span></h1>
+    <div class="hgrid">
+      <div>
+        <p>Small classes, real coaching, and a team that checks in when you miss a week. Try us free for 7 days. No contract talk at the front desk.</p>
+        <div class="ctas">
+          <a class="btn" href="#join">Start my free week
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn o" href="#classes">See classes</a>
+        </div>
+      </div>
+      <div class="today rv" aria-label="Today's classes">
+        <h3>Today at Ironline <b id="clock">--:--</b></h3>
+        <div id="sched"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tk" aria-hidden="true"><div class="t c" id="tk"></div></div>
+
+  <section id="trial">
+    <div class="container">
+      <h2 class="h2 x rv">Your free week,<br>day by day.</h2>
+      <p class="sub rv">We don't hand you a key fob and disappear. Here's what happens, including the texts you'll get.</p>
+      <div class="trial">
+        <div class="day rv"><div class="n x">01<small>Day one</small></div><h4>Intro session</h4><p>30 minutes with a coach. We check how you move and set your first weights.</p>
+          <div class="sms"><b>Text · day before</b>Hi Sam, see you tomorrow at 6pm with Coach Ren. Bring water, we've got the rest.</div></div>
+        <div class="day rv"><div class="n x">03<small>Day three</small></div><h4>First class</h4><p>Pick any class on the timetable. Your coach already knows your numbers.</p>
+          <div class="sms"><b>Text · after class</b>Good work today. Sore tomorrow? Totally normal. Book your next one here.</div></div>
+        <div class="day rv"><div class="n x">07<small>Day seven</small></div><h4>Check-in chat</h4><p>How did it feel? If it's a fit, we'll find the plan that suits your week.</p>
+          <div class="sms"><b>Text · day seven</b>Your free week ends tomorrow. Want to keep going? Reply YES and we'll sort it.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="classes" style="padding-top:0">
+    <div class="container">
+      <h2 class="h2 x rv">Four classes.<br>Zero filler.</h2>
+      <div class="classes">
+        <div class="cls rv"><h4 class="c">Strength Base</h4><p>Squat, press and pull with a coach watching your form. Best place to start.</p><div class="int"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><small><span>Intensity</span><span>50 min</span></small></div>
+        <div class="cls rv"><h4 class="c">Power Hour</h4><p>Heavier lifts, longer rests, bigger numbers on the board.</p><div class="int"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><small><span>Intensity</span><span>60 min</span></small></div>
+        <div class="cls rv"><h4 class="c">Engine</h4><p>Rower, bike and sled intervals. Short, sweaty, done before breakfast.</p><div class="int"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><small><span>Intensity</span><span>40 min</span></small></div>
+        <div class="cls rv"><h4 class="c">Mobility</h4><p>Stretch, breathe and undo a week of sitting. Pairs well with everything.</p><div class="int"><i class="on"></i><i></i><i></i><i></i><i></i></div><small><span>Intensity</span><span>45 min</span></small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plans" style="padding-top:0">
+    <div class="container">
+      <h2 class="h2 x rv">Pay weekly.<br>Pause any time.</h2>
+      <div class="plans">
+        <div class="plan rv"><h4 class="c">Twice a week</h4><div class="p x">$32<small> / week</small></div><ul><li>2 classes a week</li><li>Coach check-in each month</li><li>Book in the app</li></ul><a class="btn o" href="#join">Try it free</a></div>
+        <div class="plan hot rv"><span class="badge">Most picked</span><h4 class="c">Unlimited</h4><div class="p x">$44<small> / week</small></div><ul><li>Every class, every day</li><li>Open gym 5am to 10pm</li><li>Program reviewed every 6 weeks</li></ul><a class="btn" href="#join">Try it free</a></div>
+        <div class="plan rv"><h4 class="c">Open gym</h4><div class="p x">$22<small> / week</small></div><ul><li>Train on your own, 5am to 10pm</li><li>One intro session included</li><li>Add classes any time</li></ul><a class="btn o" href="#join">Try it free</a></div>
+      </div>
+      <p class="fine rv">Prices in AUD, billed weekly. Pause up to 4 weeks a year. Cancel with 7 days' notice.</p>
+    </div>
+  </section>
+
+  <section id="join" style="padding-top:0">
+    <div class="container join">
+      <div class="rv">
+        <h2 class="h2 x">Claim your<br><span style="color:var(--lime)">free week.</span></h2>
+        <p class="sub">Tell us what you're after and when you can train. A coach will text you within the hour to book your intro session.</p>
+        <div class="nums">
+          <div class="num"><b class="x" data-count="7">0</b><span>Days free</span></div>
+          <div class="num"><b class="x" data-count="12">0</b><span>Max per class</span></div>
+          <div class="num"><b class="x" data-count="0">0</b><span>Lock-in contracts</span></div>
+        </div>
+      </div>
+      <form class="rv" id="form" novalidate>
+        <div class="fields">
+          <div class="lb">Your main goal</div>
+          <div class="chips">
+            <label><input type="radio" name="g" value="get stronger" checked><span>Get stronger</span></label>
+            <label><input type="radio" name="g" value="lose fat"><span>Lose fat</span></label>
+            <label><input type="radio" name="g" value="build a habit"><span>Build a habit</span></label>
+            <label><input type="radio" name="g" value="come back from a break"><span>Come back from a break</span></label>
+          </div>
+          <div class="lb">Best time to train</div>
+          <div class="chips">
+            <label><input type="radio" name="t" value="early mornings" checked><span>5–8am</span></label>
+            <label><input type="radio" name="t" value="lunchtime"><span>Lunch</span></label>
+            <label><input type="radio" name="t" value="after work"><span>After work</span></label>
+            <label><input type="radio" name="t" value="weekends"><span>Weekends</span></label>
+          </div>
+          <div class="two">
+            <div class="f"><label for="n">First name</label><input id="n" autocomplete="given-name"></div>
+            <div class="f"><label for="m">Mobile</label><input id="m" type="tel" autocomplete="tel"></div>
+          </div>
+          <label class="ck"><input type="checkbox" checked> Text me about my free week. Reply STOP to opt out.</label>
+          <button class="btn" type="submit">Start my free week</button>
+        </div>
+        <div class="ok" role="status"><div class="x">You're in.</div><p id="okT">A coach will text you within the hour.</p><p style="font-size:13px;margin-top:14px">(Sample design: nothing was sent.)</p></div>
+      </form>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="container">
+      <h2 class="h2 x rv" style="margin-bottom:20px">Before you ask.</h2>
+      <div class="rv">
+        <details><summary>I haven't trained in years. Is that okay?<i></i></summary><p>That's most people on day one. Your intro session sets weights for where you are now, not where you used to be.</p></details>
+        <details><summary>Do I need to book classes?<i></i></summary><p>Yes, in the app. Classes cap at 12, so booking means a coach can actually watch your lifts.</p></details>
+        <details><summary>What happens after the free week?<i></i></summary><p>Nothing automatic. We'll text you on day seven. If you want to keep going, reply and we'll set up a plan. If not, that's it.</p></details>
+        <details><summary>Is there parking?<i></i></summary><p>Free street parking after 6pm, and bike racks out front.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="fg">
+      <div><a class="logo x" href="#top"><i></i>Ironline</a><p style="margin-top:12px;color:var(--muted);max-width:30ch">Strength club in West End, Brisbane.</p></div>
+      <div><h5>Find us</h5><p>8 Example Lane<br>West End QLD 4101</p></div>
+      <div><h5>Talk to us</h5><p>(07) 5550 1234<br>Text or call, 5am to 8pm</p></div>
+    </div>
+    <div class="legal"><span>Sample design. Ironline Strength Club, its coaches, address, phone and prices are fictional.</span><span>Design by Maribloom</span></div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar"><a class="btn" href="#join">Start my free week</a></div>
+
+<script>
+(() => {
+  // ticker
+  const words = ["Real coaching","Max 12 per class","Free 7-day trial","No lock-in","Open 5am"];
+  const h = words.map(w=>`<span>${w}</span>`).join(""); document.getElementById("tk").innerHTML = h+h+h+h;
+
+  // schedule (based on visitor's local time, as a demo)
+  const cls = [["05:30","Engine","Coach Ren"],["06:30","Strength Base","Coach Ali"],["09:30","Mobility","Coach Jo"],["12:15","Engine","Coach Ali"],["17:30","Power Hour","Coach Ren"],["18:30","Strength Base","Coach Jo"],["19:30","Mobility","Coach Ali"]];
+  const now = new Date(), mins = now.getHours()*60+now.getMinutes();
+  const toM = s => +s.slice(0,2)*60 + +s.slice(3);
+  let next = cls.findIndex(c => toM(c[0]) + 50 > mins); if(next<0) next = 0;
+  const show = [0,1,2,3].map(i => cls[(next+i) % cls.length]);
+  document.getElementById("sched").innerHTML = show.map((c,i) => {
+    const live = i===0 && toM(c[0]) <= mins && toM(c[0])+50 > mins;
+    return `<div class="cl ${i===0?"now":""}"><time>${c[0]}</time><span>${c[1]}</span><em>${i===0?(live?"On now":"Next up"):c[2]}</em></div>`;
+  }).join("");
+  const pad = n => String(n).padStart(2,"0");
+  const tick = () => { const d = new Date(); document.getElementById("clock").textContent = pad(d.getHours())+":"+pad(d.getMinutes()); };
+  tick(); setInterval(tick, 15000);
+
+  // hero
+  requestAnimationFrame(()=> document.getElementById("hero").classList.add("in"));
+
+  // counters
+  const count = el => { const end = +el.dataset.count; if(!end){ el.textContent = "0"; return; } let n=0; const t = setInterval(()=>{ n++; el.textContent = n; if(n>=end) clearInterval(t); }, 900/end); };
+
+  // reveal
+  const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); e.target.querySelectorAll("[data-count]").forEach(count); io.unobserve(e.target); } }), {threshold:.12});
+  document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+  // form
+  const f = document.getElementById("form");
+  f.addEventListener("submit", e => {
+    e.preventDefault();
+    const n = document.getElementById("n"), m = document.getElementById("m");
+    if(!n.value.trim()) return n.focus(); if(!m.value.trim()) return m.focus();
+    const g = f.querySelector("[name=g]:checked").value, t = f.querySelector("[name=t]:checked").value;
+    document.getElementById("okT").textContent = `${n.value.trim()}, a coach will text you within the hour to book an intro session for ${t}. Goal noted: ${g}.`;
+    f.classList.add("sent");
+  });
+
+  // mobile bar
+  const mb = document.getElementById("mbar"), join = document.getElementById("join");
+  addEventListener("scroll", () => { const r = join.getBoundingClientRect(); mb.classList.toggle("show", scrollY > 600 && (r.top > innerHeight || r.bottom < 0)); }, {passive:true});
+})();
+</script>
+</body>
+</html>

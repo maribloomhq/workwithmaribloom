@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polished Nail Lounge · Sample design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--milk:#FFF6F7;--pink:#F9D3DD;--pink2:#F4B9C9;--cherry:#C81E44;--choc:#2B1A1D;--muted:#7A6266;--line:#F0D9DE;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--milk);color:var(--choc);-webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.s{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+.container{width:min(1140px,100% - 40px);margin:0 auto}
+:focus-visible{outline:2px solid var(--cherry);outline-offset:3px}
+
+.sample{background:var(--choc);color:#F3DDE2;font-size:12px;text-align:center;padding:7px 12px}
+.sample b{color:#fff}
+header{position:sticky;top:0;z-index:30;background:rgba(255,246,247,.92);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;height:70px}
+.logo{font-family:"Instrument Serif";font-size:30px;text-decoration:none;font-style:italic;letter-spacing:-.02em}
+.logo b{font-style:normal;color:var(--cherry)}
+.links{display:flex;gap:26px;font-size:14px;font-weight:500}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--choc)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:var(--cherry);color:#fff;font-weight:600;font-size:15px;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(200,30,68,.25)}
+.btn.soft{background:var(--white);color:var(--choc);border:1px solid var(--line)}
+.btn.soft:hover{box-shadow:0 10px 24px rgba(43,26,29,.08)}
+.nav .btn{padding:10px 18px;font-size:14px}
+@media(max-width:780px){.links{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:56px 0 72px}
+.pill{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;background:var(--white);border:1px solid var(--line);padding:7px 14px;border-radius:999px}
+.pill i{width:10px;height:10px;border-radius:50%;background:var(--cherry)}
+.hero h1{font-size:clamp(56px,8.4vw,118px);line-height:.9;margin-top:20px}
+.hero h1 em{color:var(--cherry)}
+.hero p{font-size:18px;color:var(--muted);margin-top:22px;max-width:42ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .small{font-size:13px;color:var(--muted);margin-top:18px}
+
+/* studio card */
+.studio{background:var(--pink);border-radius:36px;padding:28px 24px 24px;position:relative;overflow:hidden}
+.studio::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:var(--pink2);right:-120px;top:-140px}
+.studio h3{position:relative;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--choc);display:flex;justify-content:space-between}
+.studio h3 span{color:var(--cherry);text-transform:none;letter-spacing:0;font-weight:600}
+.hand{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:10px;height:250px;margin:16px 0 10px}
+.finger{width:62px;border-radius:31px 31px 10px 10px;background:#F2C7B2;position:relative;display:flex;justify-content:center;padding-top:5px;transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.finger:nth-child(1){height:150px}.finger:nth-child(2){height:210px}.finger:nth-child(3){height:235px}.finger:nth-child(4){height:205px}.finger:nth-child(5){height:120px;width:66px;transform:rotate(-14deg) translateY(10px)}
+.finger svg{width:50px;height:75px;overflow:visible}
+.finger .nail{fill:var(--c,#C81E44);transition:fill .45s ease,d .45s ease}
+.finger .gloss{fill:#fff;opacity:.38}
+.studio.pop .finger:not(:nth-child(5)){animation:wig .5s ease}
+.studio.pop .finger:nth-child(2){animation-delay:.04s}.studio.pop .finger:nth-child(3){animation-delay:.08s}.studio.pop .finger:nth-child(4){animation-delay:.12s}
+@keyframes wig{40%{transform:translateY(-8px)}}
+.picker{position:relative;background:var(--white);border-radius:24px;padding:16px}
+.prow{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.prow+.prow{margin-top:14px}
+.prow .lab{font-size:13px;font-weight:600;color:var(--muted)}
+.cols{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.col{width:30px;height:30px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);transition:transform .2s,box-shadow .2s}
+.col:hover{transform:scale(1.12)}
+.col[aria-pressed="true"]{box-shadow:0 0 0 2px var(--choc)}
+.shapes{display:flex;gap:6px}
+.shp{padding:7px 12px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:600}
+.shp[aria-pressed="true"]{background:var(--choc);color:#fff;border-color:var(--choc)}
+.cname{font-family:"Instrument Serif";font-style:italic;font-size:22px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.finger{width:52px}.finger svg{width:42px;height:63px}.finger:nth-child(5){width:56px}.hand{height:220px}}
+
+/* menu */
+section{padding:96px 0}
+.h2{font-size:clamp(46px,6.4vw,84px);line-height:.95}
+.h2 em{color:var(--cherry)}
+.sub{color:var(--muted);font-size:17px;max-width:46ch;margin-top:14px}
+.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.m{background:var(--white);border:1px solid var(--line);border-radius:26px;padding:24px;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.m:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(43,26,29,.08)}
+.m .dot{width:44px;height:44px;border-radius:50%;margin-bottom:18px;display:grid;place-items:center}
+.m .dot svg{width:22px;height:22px;stroke:var(--choc);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.m h4{font-family:"Instrument Serif";font-size:32px;line-height:1;font-weight:400}
+.m p{color:var(--muted);font-size:14px;margin-top:8px;flex:1}
+.m .pr{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.m .pr b{font-size:20px;color:var(--choc)}
+@media(max-width:960px){.menu{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.menu{grid-template-columns:1fr}}
+
+/* schedule */
+.sched{background:var(--choc);color:#F7E6EA;border-radius:40px;padding:clamp(32px,6vw,72px);display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.sched .h2 em{color:var(--pink2)}
+.sched .sub{color:#CDB5BA}
+.tl{position:relative;display:grid;gap:14px}
+.tl::before{content:"";position:absolute;left:21px;top:20px;bottom:20px;width:2px;background:rgba(255,255,255,.14)}
+.ti{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.ti .b{width:44px;height:44px;border-radius:50%;background:#3E282C;display:grid;place-items:center;font-size:12px;font-weight:700;position:relative;z-index:1}
+.ti.on .b{background:var(--cherry);color:#fff}
+.ti .bub{background:#3E282C;border-radius:18px 18px 18px 6px;padding:12px 14px;font-size:14px}
+.ti .bub small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink2);margin-bottom:4px}
+@media(max-width:900px){.sched{grid-template-columns:1fr}}
+
+/* booking */
+.book{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.book>*{min-width:0}
+form{background:var(--white);border:1px solid var(--line);border-radius:30px;padding:clamp(22px,4vw,34px)}
+.lb{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:10px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px}
+.opts label,.times label{position:relative;cursor:pointer}
+.opts input,.times input{position:absolute;opacity:0}
+.opts span{display:block;padding:13px 14px;border:1.5px solid var(--line);border-radius:16px;font-size:14px;font-weight:600;transition:.2s}
+.opts span small{display:block;font-weight:500;color:var(--muted)}
+input:checked+span{border-color:var(--cherry);background:#FFF0F3}
+input:focus-visible+span{outline:2px solid var(--cherry);outline-offset:2px}
+.times{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:22px}
+.times label{flex:none}
+.times span{display:block;padding:10px 16px;border:1.5px solid var(--line);border-radius:999px;font-size:14px;font-weight:600;transition:.2s}
+.times input:checked+span{background:var(--cherry);border-color:var(--cherry);color:#fff}
+.chosen{display:flex;align-items:center;gap:12px;background:var(--milk);border-radius:16px;padding:12px 14px;margin-bottom:22px;font-size:14px}
+.chosen i{width:28px;height:28px;border-radius:50%;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.chosen button{margin-left:auto;font-size:13px;font-weight:600;color:var(--cherry);text-decoration:underline;text-underline-offset:3px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;min-width:0}
+.f label{font-size:14px;font-weight:600}
+.f input{font:inherit;width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:14px;color:var(--choc);background:#fff}
+.f input:focus{outline:none;border-color:var(--cherry)}
+.ck{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin:4px 0 20px}
+form .btn{width:100%;justify-content:center}
+.ok{display:none;text-align:center;padding:30px 6px}
+.ok .s{font-size:52px;line-height:1}
+.ok p{color:var(--muted);margin-top:12px}
+form.sent .fields{display:none}
+form.sent .ok{display:block;animation:fi .5s}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}}
+.side ul{list-style:none;margin-top:28px;display:grid;gap:12px}
+.side li{display:flex;gap:12px;align-items:center;font-size:15px}
+.side li i{width:34px;height:34px;flex:none;border-radius:50%;background:var(--pink);display:grid;place-items:center}
+.side li svg{width:16px;height:16px;stroke:var(--cherry);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:900px){.book{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+
+footer{background:var(--pink);padding:56px 0 30px}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+footer h5{font-size:14px;margin-bottom:8px}
+footer p{font-size:14px;color:#5B4448}
+.legal{margin-top:40px;padding-top:18px;border-top:1px solid rgba(43,26,29,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:#6E565A}
+@media(max-width:760px){.fg{grid-template-columns:1fr}}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="sample"><b>Sample design</b> · Polished Nail Lounge is a fictional business · Design by Maribloom</div>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#top">Polished<b>.</b></a>
+    <nav class="links" aria-label="Main"><a href="#try">Try a colour</a><a href="#menu">Menu</a><a href="#refill">Refills</a></nav>
+    <a class="btn" href="#book">Book now</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="container hero">
+    <div>
+      <span class="pill rv"><i></i>Nail lounge · Wicker Park, Chicago</span>
+      <h1 class="s rv">Nails that last <em>past Friday.</em></h1>
+      <p class="rv">Gel, BIAB and hand-painted art, done properly so it doesn't lift by the weekend. Pick a colour now and we'll have it ready when you sit down.</p>
+      <div class="ctas rv">
+        <a class="btn" href="#book">Book an appointment
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn soft" href="#menu">See the menu</a>
+      </div>
+      <p class="small rv">Walk-ins welcome when there's a free chair. Booking guarantees your spot.</p>
+    </div>
+
+    <div class="studio rv" id="try">
+      <h3>Try a colour <span id="cname" class="cname">Cherry Pop</span></h3>
+      <div class="hand" aria-hidden="true" id="hand"></div>
+      <div class="picker">
+        <div class="prow"><span class="lab">Colour</span><div class="cols" id="cols" role="group" aria-label="Polish colour"></div></div>
+        <div class="prow"><span class="lab">Shape</span><div class="shapes" id="shapes" role="group" aria-label="Nail shape"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="menu" style="padding-top:20px">
+    <div class="container">
+      <h2 class="h2 s rv">The menu, <em>kept short.</em></h2>
+      <p class="sub rv">Every service includes shaping, cuticle care and a hand massage. Removal of our own gel is free.</p>
+      <div class="menu">
+        <div class="m rv"><div class="dot" style="background:#F9D3DD"><svg viewBox="0 0 24 24"><path d="M8 21V10a4 4 0 0 1 8 0v11"/><path d="M8 14h8"/></svg></div><h4>Gel manicure</h4><p>Glossy colour that lasts up to three weeks without chipping.</p><div class="pr"><span>45 min</span><b>$45</b></div></div>
+        <div class="m rv"><div class="dot" style="background:#FBE3C8"><svg viewBox="0 0 24 24"><path d="M8 21V9a4 4 0 0 1 8 0v12"/><path d="M8 13c2.6-1.4 5.4-1.4 8 0"/></svg></div><h4>BIAB</h4><p>A strengthening builder gel. Ideal if your nails bend or break.</p><div class="pr"><span>60 min</span><b>$65</b></div></div>
+        <div class="m rv"><div class="dot" style="background:#E7DDF7"><svg viewBox="0 0 24 24"><path d="M4 18c3-6 13-6 16 0"/><path d="M7 18v3M17 18v3"/></svg></div><h4>Gel pedicure</h4><p>Soak, scrub, shape and colour, with a warm towel finish.</p><div class="pr"><span>60 min</span><b>$55</b></div></div>
+        <div class="m rv"><div class="dot" style="background:#D9EDE3"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 5.6L20 9.5l-4.5 3.8L17 19l-5-3-5 3 1.5-5.7L4 9.5l5.8-.9z"/></svg></div><h4>Nail art</h4><p>Chrome, French, florals or your own reference photo.</p><div class="pr"><span>Add-on</span><b>+$10 to $25</b></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="refill" style="padding-top:0">
+    <div class="container">
+      <div class="sched rv">
+        <div>
+          <h2 class="h2 s">Your nails, <em>on schedule.</em></h2>
+          <p class="sub">Gel and BIAB look best refilled every three weeks. We'll text you when it's time, so you're never stuck with grown-out nails before a big weekend.</p>
+          <a class="btn" href="#book" style="margin-top:28px">Book my first set</a>
+        </div>
+        <div class="tl">
+          <div class="ti"><span class="b">Day 0</span><div class="bub"><small>After your visit</small>Thanks for coming in! How are your new nails? Tap to leave us a quick review.</div></div>
+          <div class="ti on"><span class="b">Wk 3</span><div class="bub"><small>Refill reminder</small>Hi Ana, your refill is due. Same colour, or something new? Your next free slot is Saturday.</div></div>
+          <div class="ti"><span class="b">Wk 6</span><div class="bub"><small>If we haven't seen you</small>We miss your nails! Here's $10 off your next set, valid for two weeks.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" style="padding-top:0">
+    <div class="container book">
+      <div class="side rv">
+        <h2 class="h2 s">Grab a <em>chair.</em></h2>
+        <p class="sub">Book in under a minute. Your colour choice comes with you, so we can have it out and ready.</p>
+        <ul>
+          <li><i><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></i>Free gel removal on refills</li>
+          <li><i><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></i>Free fix within 5 days if anything lifts</li>
+          <li><i><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></i>Running late? Text us and we'll hold your chair 10 minutes</li>
+        </ul>
+      </div>
+      <form class="rv" id="form" novalidate>
+        <div class="fields">
+          <div class="lb">Service</div>
+          <div class="opts">
+            <label><input type="radio" name="sv" value="Gel manicure" checked><span>Gel manicure<small>$45</small></span></label>
+            <label><input type="radio" name="sv" value="BIAB"><span>BIAB<small>$65</small></span></label>
+            <label><input type="radio" name="sv" value="Gel pedicure"><span>Gel pedicure<small>$55</small></span></label>
+            <label><input type="radio" name="sv" value="Mani + pedi"><span>Mani + pedi<small>$95</small></span></label>
+          </div>
+          <div class="lb">Saturday</div>
+          <div class="times" id="times"></div>
+          <div class="chosen"><i id="chosenDot"></i><span>Colour: <b id="chosenName">Cherry Pop</b>, <span id="chosenShape">almond</span></span><button type="button" onclick="document.getElementById('try').scrollIntoView({behavior:'smooth',block:'center'})">Change</button></div>
+          <div class="two">
+            <div class="f"><label for="n">Name</label><input id="n" autocomplete="name"></div>
+            <div class="f"><label for="m">Mobile</label><input id="m" type="tel" autocomplete="tel"></div>
+          </div>
+          <label class="ck"><input type="checkbox" checked> Text me a reminder and when my refill is due. Reply STOP any time.</label>
+          <button class="btn" type="submit">Book my appointment</button>
+        </div>
+        <div class="ok" role="status"><div class="s">See you <em style="color:var(--cherry)">Saturday.</em></div><p id="okT">We'll text you to confirm.</p><p style="font-size:13px;margin-top:14px">(Sample design: no booking was sent.)</p></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="fg">
+      <div><a class="logo" href="#top">Polished<b>.</b></a><p style="margin-top:10px;max-width:30ch">Nail lounge in Wicker Park, Chicago.</p></div>
+      <div><h5>Visit</h5><p>1500 Example Ave<br>Chicago, IL 60622</p></div>
+      <div><h5>Hours</h5><p>Tue to Sat, 10am to 8pm<br>Sun, 11am to 5pm</p></div>
+    </div>
+    <div class="legal"><span>Sample design. Polished Nail Lounge, its address and prices are fictional.</span><span>Design by Maribloom</span></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const NS = "http://www.w3.org/2000/svg";
+  const shapes = {
+    almond: "M4 58V34C4 16 16 2 22 0C28 2 40 16 40 34V58Q22 68 4 58Z",
+    round:  "M4 58V24C4 14 12 6 22 6C32 6 40 14 40 24V58Q22 68 4 58Z",
+    square: "M4 58V8Q4 2 10 2H34Q40 2 40 8V58Q22 68 4 58Z"
+  };
+  const colours = [["Cherry Pop","#C81E44"],["Ballet Slipper","#F3C9CF"],["Espresso","#4A2A26"],["Butter","#F2D98A"],["Sage","#9DB59A"],["Lilac Haze","#B8A2E3"],["Chrome","#C9CDD3"]];
+  let cur = {c:colours[0], s:"almond"};
+
+  // hand
+  const hand = document.getElementById("hand");
+  for(let i=0;i<5;i++){
+    const f = document.createElement("div"); f.className = "finger";
+    f.innerHTML = `<svg viewBox="0 0 44 66"><path class="nail" d="${shapes.almond}"/><ellipse class="gloss" cx="14" cy="26" rx="4" ry="12"/></svg>`;
+    hand.appendChild(f);
+  }
+  const studio = document.getElementById("try");
+  const paint = () => {
+    document.querySelectorAll(".finger .nail").forEach((n,i) => { n.style.fill = cur.c[1]; n.setAttribute("d", shapes[cur.s]); });
+    document.getElementById("cname").textContent = cur.c[0];
+    document.getElementById("chosenName").textContent = cur.c[0];
+    document.getElementById("chosenShape").textContent = cur.s;
+    document.getElementById("chosenDot").style.background = cur.c[1];
+    studio.classList.remove("pop"); void studio.offsetWidth; studio.classList.add("pop");
+  };
+  const cols = document.getElementById("cols");
+  colours.forEach((c,i) => {
+    const b = document.createElement("button"); b.className = "col"; b.type = "button";
+    b.style.background = c[1]; b.setAttribute("aria-label", c[0]); b.setAttribute("aria-pressed", i===0);
+    b.onclick = () => { cols.querySelectorAll(".col").forEach(x=>x.setAttribute("aria-pressed",x===b)); cur.c = c; paint(); };
+    cols.appendChild(b);
+  });
+  const sh = document.getElementById("shapes");
+  Object.keys(shapes).forEach((k,i) => {
+    const b = document.createElement("button"); b.className = "shp"; b.type = "button"; b.textContent = k[0].toUpperCase()+k.slice(1);
+    b.setAttribute("aria-pressed", i===0);
+    b.onclick = () => { sh.querySelectorAll(".shp").forEach(x=>x.setAttribute("aria-pressed",x===b)); cur.s = k; paint(); };
+    sh.appendChild(b);
+  });
+  paint();
+
+  // gentle auto demo until the visitor touches it
+  let auto = setInterval(() => { const i = (colours.indexOf(cur.c)+1) % colours.length; cols.children[i].click(); }, 2600);
+  studio.addEventListener("pointerdown", () => clearInterval(auto), {once:true});
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) clearInterval(auto);
+
+  // times
+  const t = ["10:00","11:15","12:30","2:00","3:30","5:00","6:15"];
+  document.getElementById("times").innerHTML = t.map((x,i)=>`<label><input type="radio" name="t" value="${x}" ${i===1?"checked":""}><span>${x}</span></label>`).join("");
+
+  // form
+  const f = document.getElementById("form");
+  f.addEventListener("submit", e => {
+    e.preventDefault(); clearInterval(auto);
+    const n = document.getElementById("n"), m = document.getElementById("m");
+    if(!n.value.trim()) return n.focus(); if(!m.value.trim()) return m.focus();
+    const sv = f.querySelector("[name=sv]:checked").value, tm = f.querySelector("[name=t]:checked").value;
+    document.getElementById("okT").textContent = `${n.value.trim().split(" ")[0]}, your ${sv} in ${cur.c[0]} (${cur.s}) is set for Saturday at ${tm}. We'll text you to confirm.`;
+    f.classList.add("sent");
+  });
+
+  // reveal
+  const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+  document.querySelectorAll(".rv").forEach((el,i) => { if(el.closest(".hero")) el.style.transitionDelay = (i*0.08)+"s"; io.observe(el); });
+})();
+</script>
+</body>
+</html>
