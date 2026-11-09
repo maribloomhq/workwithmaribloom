@@ -140,14 +140,31 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .sh a,.sh button{font-size:14px;font-weight:500;color:var(--accent);text-decoration:none}
 
 /* tools marquee */
-.tools{overflow:hidden;margin:0 -18px;mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent)}
-.ttrack{display:flex;gap:14px;width:max-content;padding:4px 18px;animation:slide 26s linear infinite}
-.tools:hover .ttrack,.tools:active .ttrack{animation-play-state:paused}
-@keyframes slide{to{transform:translateX(-50%)}}
-.tool{width:72px;display:flex;flex-direction:column;align-items:center;gap:8px}
-.tile{width:56px;height:56px;border-radius:16px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;place-items:center;
-  font-weight:700;font-size:15px;color:var(--accent);letter-spacing:-.02em}
-.tool span{font-size:12px;color:var(--muted);white-space:nowrap}
+.tools{display:grid;align-items:center;min-height:136px;padding:0 9% 4px 12%;
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  background:#f6f0ef url("assets/tools-floral-banner.webp") center/100% 100% no-repeat}
+.tools-window{min-width:0;overflow:auto;scrollbar-width:thin;background:#faf7f8;
+  border:1px solid #e8e1ef;border-radius:12px}
+.ttrack,.tools-list{display:flex;width:max-content}
+.tools-list{list-style:none;gap:7px;padding:5px 7px 5px 0}
+.tool{display:flex;flex:none;align-items:center;justify-content:center;flex-direction:column;
+  gap:3px;width:100px;height:60px;border-radius:8px;background:#fff;color:#352349}
+.tool img{display:block;width:86px;height:42px;object-fit:contain}
+.tool-compact img{width:27px;height:27px}
+.tool span{font-size:10px;font-weight:600;white-space:nowrap}
+.tools-copy{display:none}
+.tools[data-ready] .tools-window{overflow:hidden}
+.tools[data-ready] .ttrack{animation:tools-slide 56s linear infinite}
+.tools[data-ready] .tools-copy{display:flex}
+.tools[data-paused] .ttrack,.tools:hover .ttrack,.tools-window:focus-visible .ttrack{animation-play-state:paused}
+@keyframes tools-slide{to{transform:translateX(-50%)}}
+.reduced .tools[data-ready] .tools-window{overflow:auto}
+.reduced .tools[data-ready] .tools-copy,.reduced #tools-toggle{display:none}
+@media (prefers-reduced-motion:reduce){
+  .tools[data-ready] .tools-window{overflow:auto}
+  .tools[data-ready] .tools-copy,#tools-toggle{display:none}
+}
+@media(max-width:480px){.tools{min-height:115px}.tool{width:86px}.tool img{max-width:75px}}
 
 /* explore */
 .explore{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 18px;margin:0 -18px;padding:4px 18px 8px;scrollbar-width:none}
@@ -584,9 +601,38 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       <div class="stat"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><b>GMT+4</b><span>Dubai time</span></div>
     </div>
 
-    <div class="sh rv"><h2>Tools I work with</h2></div>
-    <div class="tools rv" aria-label="Tools: GoHighLevel, n8n, Make.com, Tally, Calendly, Klaviyo, Google Sheets, Gmail, Framer">
-      <div class="ttrack" id="ttrack" aria-hidden="true"></div>
+    <div class="sh rv" id="tools">
+      <h2 id="tools-heading">Tools I work with</h2>
+      <button type="button" id="tools-toggle" aria-label="Pause logo scrolling" hidden>Pause</button>
+    </div>
+    <div class="tools rv" id="tools-marquee">
+      <div class="tools-window" tabindex="0" role="region" aria-labelledby="tools-heading">
+        <div class="ttrack" id="ttrack">
+          <ul class="tools-list" id="tools-list" role="list">
+          <li class="tool tool-compact"><img src="assets/tool-logos/highlevel.webp" alt="" width="32" height="32" decoding="async"><span>GoHighLevel</span></li>
+          <li class="tool"><img src="assets/tool-logos/n8n.webp" alt="n8n" width="220" height="59" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/make.webp" alt="Make" width="220" height="46" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/tally.webp" alt="Tally" width="215" height="112" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/google-sheets.webp" alt="Google Sheets" width="130" height="112" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/google-calendar.webp" alt="Google Calendar" width="170" height="112" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/google-meet.webp" alt="Google Meet" width="159" height="112" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/gmail.webp" alt="Gmail" width="220" height="58" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/google-apps-script.webp" alt="Google Apps Script" width="191" height="112" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/telegram.webp" alt="Telegram" width="101" height="112" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/twilio.webp" alt="Twilio" width="220" height="70" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/slack.webp" alt="Slack" width="220" height="62" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/notion.webp" alt="Notion" width="220" height="73" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/claude.webp" alt="Claude" width="220" height="53" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/chatgpt.webp" alt="ChatGPT" width="110" height="112" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/openai.webp" alt="OpenAI" width="220" height="65" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/grok.webp" alt="Grok" width="220" height="78" decoding="async"></li>
+          <li class="tool"><img src="assets/tool-logos/gemini.webp" alt="Gemini" width="220" height="57" decoding="async"></li>
+          <li class="tool tool-compact"><img src="assets/tool-logos/calendly.webp" alt="" width="48" height="48" decoding="async"><span>Calendly</span></li>
+          <li class="tool tool-compact"><img src="assets/tool-logos/klaviyo.webp" alt="" width="96" height="96" decoding="async"><span>Klaviyo</span></li>
+          <li class="tool tool-compact"><img src="assets/tool-logos/framer.webp" alt="" width="64" height="64" decoding="async"><span>Framer</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="sh rv"><h2>Explore</h2></div>
@@ -997,9 +1043,19 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   drawBlooms($("bgBlooms"), 11);
 
   /* ---------- tools marquee ---------- */
-  const tools = [["GHL","GoHighLevel"],["n8n","n8n"],["Mk","Make.com"],["T","Tally"],["C","Calendly"],["K","Klaviyo"],["GS","Sheets"],["@","Gmail"],["F","Framer"]];
-  const tHTML = tools.map(([m,n]) => `<div class="tool"><div class="tile">${m}</div><span>${n}</span></div>`).join("");
-  $("ttrack").innerHTML = tHTML + tHTML;
+  const marquee = $("tools-marquee"), toolsToggle = $("tools-toggle");
+  const toolsCopy = $("tools-list").cloneNode(true);
+  toolsCopy.removeAttribute("id");
+  toolsCopy.classList.add("tools-copy");
+  toolsCopy.setAttribute("aria-hidden","true");
+  $("ttrack").append(toolsCopy);
+  marquee.dataset.ready = "";
+  toolsToggle.hidden = false;
+  toolsToggle.addEventListener("click", () => {
+    const paused = marquee.toggleAttribute("data-paused");
+    toolsToggle.textContent = paused ? "Resume" : "Pause";
+    toolsToggle.setAttribute("aria-label",paused ? "Resume logo scrolling" : "Pause logo scrolling");
+  });
 
   /* ---------- preloader ---------- */
   const words = [["Every",0],["missed",0],["call,",0],["booked",1],["back.",1]];
@@ -1092,7 +1148,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     if(name==="home") revealHome(0);
     if(name==="contact") loadBookingForm();
     if(name==="services" && typeof armServices==="function") armServices();
-    window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
+    if(push !== false || location.hash !== "#tools") window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
     if(push !== false){ try{ if (location.hash !== "#"+name && !(name==="home" && !location.hash)) history.pushState(null,"",name==="home" ? location.pathname : "#"+name); }catch(e){ location.hash = name; } }
   }
   document.addEventListener("click", e => {
@@ -1112,6 +1168,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   function syncView(){
     const hash = location.hash.slice(1);
     go(hash === "booking-workflow" ? "work" : hash || "home", false);
+    if(hash === "tools") $("tools").scrollIntoView({behavior:"instant"});
     if(hash === "booking-workflow"){
       wTab(0);
       $("booking-workflow").scrollIntoView();
