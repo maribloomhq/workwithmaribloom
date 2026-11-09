@@ -328,6 +328,7 @@ footer p,footer a{font-size:14px;text-decoration:none}
 
       <form class="rv" id="bookForm" novalidate>
         <div class="fields">
+          <p class="sample-help" style="font-size:13px;margin-bottom:12px">Use fictional details to try this form.</p>
           <div class="f-label">Treatment</div>
           <div class="choice">
             <label><input type="radio" name="t" value="Slow Swedish" checked><span>Slow Swedish<small>60 min · $95</small></span></label>
@@ -342,15 +343,14 @@ footer p,footer a{font-size:14px;text-decoration:none}
             <div class="field"><label for="ph">Mobile</label><input id="ph" type="tel" autocomplete="tel" required></div>
           </div>
           <label class="consent"><input type="checkbox" checked> Text me my booking confirmation and a reminder. Reply STOP any time.</label>
-          <button class="pill" type="submit">Request my booking</button>
+          <button class="pill" type="submit">Try the sample booking</button>
         </div>
         <div class="done" role="status">
           <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/><path d="M20 33l8 8 16-17"/></svg>
-          <h3>You're on the list.</h3>
-          <p id="doneTxt">We'll text you to confirm your time.</p>
-          <p style="font-size:13px;margin-top:16px">(Sample design: no booking was sent.)</p>
+          <h3>Sample booking complete.</h3>
+          <p id="doneTxt">This is an example confirmation.</p>
         </div>
-      </form>
+        </form>
     </div>
   </section>
 
@@ -401,7 +401,7 @@ footer p,footer a{font-size:14px;text-decoration:none}
     if(!nm.value.trim()){ nm.focus(); return; }
     if(!ph.value.trim()){ ph.focus(); return; }
     const t = f.querySelector('[name=t]:checked').value, day = f.querySelector('[name=day]:checked').value;
-    document.getElementById("doneTxt").textContent = `${nm.value.trim().split(" ")[0]}, we'll text you to confirm ${t} on ${day}.`;
+    document.getElementById("doneTxt").textContent = `Sample appointment · ${day} at ${t}.`;
     f.classList.add("sent");
   });
   // reveal

@@ -232,6 +232,7 @@ footer p{font-size:14px;color:#5B4448}
       </div>
       <form class="rv" id="form" novalidate>
         <div class="fields">
+          <p class="sample-help" style="font-size:13px;margin-bottom:12px">Use fictional details to try this form.</p>
           <div class="lb">Service</div>
           <div class="opts">
             <label><input type="radio" name="sv" value="Gel manicure" checked><span>Gel manicure<small>$45</small></span></label>
@@ -247,10 +248,10 @@ footer p{font-size:14px;color:#5B4448}
             <div class="f"><label for="m">Mobile</label><input id="m" type="tel" autocomplete="tel"></div>
           </div>
           <label class="ck"><input type="checkbox" checked> Text me a reminder and when my refill is due. Reply STOP any time.</label>
-          <button class="btn" type="submit">Book my appointment</button>
+          <button class="btn" type="submit">Try the sample booking</button>
         </div>
-        <div class="ok" role="status"><div class="s">See you <em style="color:var(--cherry)">Saturday.</em></div><p id="okT">We'll text you to confirm.</p><p style="font-size:13px;margin-top:14px">(Sample design: no booking was sent.)</p></div>
-      </form>
+        <div class="ok" role="status"><div class="s">Sample booking <em style="color:var(--cherry)">complete.</em></div><p id="okT">This is an example confirmation.</p></div>
+        </form>
     </div>
   </section>
 </main>
@@ -325,7 +326,7 @@ footer p{font-size:14px;color:#5B4448}
     const n = document.getElementById("n"), m = document.getElementById("m");
     if(!n.value.trim()) return n.focus(); if(!m.value.trim()) return m.focus();
     const sv = f.querySelector("[name=sv]:checked").value, tm = f.querySelector("[name=t]:checked").value;
-    document.getElementById("okT").textContent = `${n.value.trim().split(" ")[0]}, your ${sv} in ${cur.c[0]} (${cur.s}) is set for Saturday at ${tm}. We'll text you to confirm.`;
+    document.getElementById("okT").textContent = `${sv} in ${cur.c[0]} (${cur.s}) · Saturday at ${tm}. This is an example confirmation.`;
     f.classList.add("sent");
   });
 

@@ -302,6 +302,7 @@ footer p{font-size:14px}
 
       <form class="rv" id="form" novalidate>
         <div class="fields">
+          <p class="sample-help" style="font-size:13px;margin-bottom:12px">Use fictional details to try this form.</p>
           <div class="lbl">Stylist</div>
           <div class="stylists">
             <label><input type="radio" name="s" value="Priya" checked><span class="st"><span class="av" style="background:#C8693B">P</span>Priya<small>Balayage</small></span></label>
@@ -317,14 +318,13 @@ footer p{font-size:14px}
             <div class="f"><label for="m">Mobile</label><input id="m" type="tel" autocomplete="tel"></div>
           </div>
           <label class="chk"><input type="checkbox" checked> Text me reminders and my rebook date. Reply STOP to opt out.</label>
-          <button class="btn copper" type="submit">Book my free consult</button>
+          <button class="btn copper" type="submit">Try the sample consult</button>
         </div>
         <div class="ok" role="status">
-          <div class="big">See you soon.</div>
-          <p id="okText">We'll text you to confirm.</p>
-          <p style="font-size:13px;margin-top:16px">(Sample design: no booking was sent.)</p>
+          <div class="big">Sample consult complete.</div>
+          <p id="okText">This is an example confirmation.</p>
         </div>
-      </form>
+        </form>
     </div>
   </section>
 </main>
@@ -399,7 +399,7 @@ footer p{font-size:14px}
     if(!n.value.trim()) return n.focus();
     if(!m.value.trim()) return m.focus();
     const s = f.querySelector("[name=s]:checked").value, t = f.querySelector("[name=time]:checked").value;
-    document.getElementById("okText").textContent = `${n.value.trim().split(" ")[0]}, your consult with ${s} on Thursday at ${t} is pencilled in. We'll text you to confirm.`;
+    document.getElementById("okText").textContent = `Sample consult with ${s} · Thursday at ${t}. This is an example confirmation.`;
     f.classList.add("sent");
   });
 
