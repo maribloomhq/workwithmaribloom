@@ -1423,6 +1423,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       bookingFrame.referrerPolicy = "strict-origin-when-cross-origin";
       bookingFrame.src = base.href;
       slot.appendChild(bookingFrame);
+      const widget = document.createElement("script");
+      widget.src = "https://tally.so/widgets/embed.js";
+      widget.async = true;
+      slot.after(widget);
     } else if(calculatorFields && bookingFrame.src !== base.href){
       bookingFrame.style.removeProperty("height");
       bookingFrame.src = base.href;
@@ -1435,7 +1439,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     try { if(typeof event === "string") event = JSON.parse(event); } catch { return; }
     if(!["Tally.FormLoaded","Tally.FormPageView","Tally.FormSubmitted","Tally.EmbedForm.Resize"].includes(event?.event)) return;
     const height = event.payload?.height ?? event.payload?.formHeight;
-    if(Number.isFinite(height) && height > 0 && height <= 10000){
+    if(!window.Tally && Number.isFinite(height) && height > 0 && height <= 10000){
       bookingFrame.style.height = Math.ceil(height)+"px";
     }
     if((event.event === "Tally.FormSubmitted" || event.event === "Tally.FormPageView") && bookingFrame.getBoundingClientRect().top < 0){
