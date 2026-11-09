@@ -190,7 +190,7 @@ footer p{font-size:14px}
       <div>
         <p>Small classes, real coaching, and a team that checks in when you miss a week. Try us free for 7 days. No contract talk at the front desk.</p>
         <div class="ctas">
-          <a class="btn" href="#join">Start my free week
+          <a class="btn" href="#join">Try the sample sign-up
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn o" href="#classes">See classes</a>
         </div>
@@ -247,7 +247,7 @@ footer p{font-size:14px}
     <div class="container join">
       <div class="rv">
         <h2 class="h2 x">Claim your<br><span style="color:var(--lime)">free week.</span></h2>
-        <p class="sub">Tell us what you're after and when you can train. A coach will text you within the hour to book your intro session.</p>
+        <p class="sub">Tell us what you're after and when you can train. In a live workflow, a coach could text you within the hour to book your intro session.</p>
         <div class="nums">
           <div class="num"><b class="x" data-count="7">0</b><span>Days free</span></div>
           <div class="num"><b class="x" data-count="12">0</b><span>Max per class</span></div>
@@ -256,6 +256,7 @@ footer p{font-size:14px}
       </div>
       <form class="rv" id="form" novalidate>
         <div class="fields">
+          <p class="sample-help" style="font-size:13px;margin-bottom:12px">Use fictional details to try this form.</p>
           <div class="lb">Your main goal</div>
           <div class="chips">
             <label><input type="radio" name="g" value="get stronger" checked><span>Get stronger</span></label>
@@ -275,10 +276,10 @@ footer p{font-size:14px}
             <div class="f"><label for="m">Mobile</label><input id="m" type="tel" autocomplete="tel"></div>
           </div>
           <label class="ck"><input type="checkbox" checked> Text me about my free week. Reply STOP to opt out.</label>
-          <button class="btn" type="submit">Start my free week</button>
+          <button class="btn" type="submit">Try the sample sign-up</button>
         </div>
-        <div class="ok" role="status"><div class="x">You're in.</div><p id="okT">A coach will text you within the hour.</p><p style="font-size:13px;margin-top:14px">(Sample design: nothing was sent.)</p></div>
-      </form>
+        <div class="ok" role="status"><div class="x">Sample sign-up complete.</div><p id="okT">This is an example confirmation.</p></div>
+        </form>
     </div>
   </section>
 
@@ -306,7 +307,7 @@ footer p{font-size:14px}
   </div>
 </footer>
 
-<div class="mbar" id="mbar"><a class="btn" href="#join">Start my free week</a></div>
+<div class="mbar" id="mbar"><a class="btn" href="#join">Try the sample sign-up</a></div>
 
 <script>
 (() => {
@@ -345,7 +346,7 @@ footer p{font-size:14px}
     const n = document.getElementById("n"), m = document.getElementById("m");
     if(!n.value.trim()) return n.focus(); if(!m.value.trim()) return m.focus();
     const g = f.querySelector("[name=g]:checked").value, t = f.querySelector("[name=t]:checked").value;
-    document.getElementById("okT").textContent = `${n.value.trim()}, a coach will text you within the hour to book an intro session for ${t}. Goal noted: ${g}.`;
+    document.getElementById("okT").textContent = `Sample intro session · ${t}. Example goal: ${g}.`;
     f.classList.add("sent");
   });
 
