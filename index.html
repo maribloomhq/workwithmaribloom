@@ -519,7 +519,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
 </style>
-</head>
+<style>.cal-wrap{width:100%;margin-bottom:34px}#cal-embed{min-width:320px;height:780px;border-radius:22px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}@media (max-width:760px){#cal-embed{height:1060px;border-radius:16px}}.cal-alt{margin:14px 2px 28px;font-size:.92rem;color:var(--muted);text-align:center}.cal-alt a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}.cal-alt a:hover{border-bottom-color:var(--accent)}</style></head>
 <body class="locked">
 
 <svg class="blooms" id="bgBlooms" aria-hidden="true"></svg>
@@ -850,11 +850,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 
   <section class="view" id="v-contact" aria-label="Contact">
-    <div class="vhead"><div class="eyebrow">Free call</div><h1>Let's talk about your bookings.</h1><p>Tell me a little about your business. I'll reply by email with a time for a free call.</p></div>
+    <div class="vhead"><div class="eyebrow">Free call</div><h1>Let's talk about your bookings.</h1><p>Pick a time that suits you. Thirty minutes, free, no pitch - we look at where bookings slip away and what to automate first.</p></div>
     <div class="contact-form">
-    <div class="form-slot fade" id="tally-slot" data-tally-id="WJJbze">
-      <div class="form-ph"><span>Inquiry form loads here. <a href="https://tally.so/r/WJJbze" target="_blank" rel="noreferrer noopener">Open the form</a></span></div>
-    </div>
+    <div class="cal-wrap"><div class="calendly-inline-widget" id="cal-embed" data-url="https://calendly.com/workwithmaribloom/30min?hide_gdpr_banner=1&primary_color=6B3FE0&background_color=FFFFFF&text_color=15121F" data-light="https://calendly.com/workwithmaribloom/30min?hide_gdpr_banner=1&primary_color=6B3FE0&background_color=FFFFFF&text_color=15121F" data-dark="https://calendly.com/workwithmaribloom/30min?hide_gdpr_banner=1&primary_color=9B6DFF&background_color=1A1824&text_color=F8F4FF"></div><noscript><p class="cal-alt"><a href="https://calendly.com/workwithmaribloom/30min?hide_gdpr_banner=1&primary_color=6B3FE0&background_color=FFFFFF&text_color=15121F" target="_blank" rel="noreferrer noopener">Open the booking calendar</a></p></noscript><p class="cal-alt">Not ready for a call? Email me at <a href="mailto:workwithmaribloom@gmail.com">workwithmaribloom@gmail.com</a>.</p></div>
     <p class="form-note label">This form runs on the same kind of automation I build for clients.</p>
     </div>
     <p class="contact-mail">Prefer email? <a href="mailto:workwithmaribloom@gmail.com">workwithmaribloom@gmail.com</a></p>
@@ -1312,7 +1310,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     /* v2 shims: the copied code expects these names */
     var lenis = null;
   /* Tally embed: set data-tally-id on #tally-slot (e.g. "w4XyZ1") */
-  var slot=document.getElementById('tally-slot'),fid=slot.getAttribute('data-tally-id');
+  var slot=document.getElementById('tally-slot');if(!slot)return;var fid=slot.getAttribute('data-tally-id');
   var inPreview=/claude|anthropic/i.test(location.hostname)||location.protocol==='blob:'||location.protocol==='about:';
   if(fid&&!inPreview){var f=document.createElement('iframe');
     var tsrc='https://tally.so/embed/'+encodeURIComponent(fid)+'?alignLeft=1&hideTitle=1&dynamicHeight=1';
@@ -1405,5 +1403,5 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   (document.fonts && document.fonts.ready) ? document.fonts.ready.then(start) : start();
 })();
 </script>
-</body>
+<script>(function(){var el=document.getElementById("cal-embed");if(!el)return;function pick(){var dark=document.documentElement.getAttribute("data-theme")==="dark";var u=dark?el.getAttribute("data-dark"):el.getAttribute("data-light");if(el.getAttribute("data-url")!==u){el.setAttribute("data-url",u);el.innerHTML="";if(window.Calendly&&Calendly.initInlineWidget){try{Calendly.initInlineWidget({url:u,parentElement:el})}catch(e){}}}}pick();var s=document.createElement("script");s.src="https://assets.calendly.com/assets/external/widget.js";s.async=true;document.body.appendChild(s);try{new MutationObserver(pick).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]})}catch(e){}})();</script></body>
 </html>
