@@ -1339,7 +1339,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     function ss(k,v){try{if(v===undefined)return sessionStorage.getItem(k);sessionStorage.setItem(k,v);}catch(e){return null;}}
     function hideBubble(){}
     /* ---------- chat panel (n8n Chat Trigger) ---------- */
-    var CHAT_URL='https://maribethbanas.app.n8n.cloud/webhook/83714e37-acc9-4fc8-8bf0-8cf88dbbb7b2/chat';
+    var CHAT_URL='https://n8n-production-22f04.up.railway.app/webhook/83714e37-acc9-4fc8-8bf0-8cf88dbbb7b2/chat';
     var panel=$('bchat'),log=$('bchat-log'),cform=$('bchat-form'),cin=$('bchat-input'),csend=$('bchat-send'),cclose=$('bchat-close');
     var chatOpen=false,greeted=false,sid=ss('bloomieSid');
     if(!sid){sid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+Math.random().toString(16).slice(2);ss('bloomieSid',sid);}
