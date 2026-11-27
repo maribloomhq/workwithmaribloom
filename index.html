@@ -202,11 +202,14 @@ img{max-width:100%}
 .hero-photo::before{content:"";position:absolute;left:6%;right:2%;top:6%;bottom:8%;border-radius:50%;background:radial-gradient(circle at 50% 38%,rgba(255,210,63,.42),rgba(155,109,255,.28) 40%,rgba(75,227,189,.14) 62%,transparent 74%);filter:blur(2px);z-index:0;pointer-events:none}
 .hero-photo img{position:relative;z-index:1;display:block;width:100%;height:auto;background:transparent;border:0;border-radius:0;object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.38))}
 @media (max-width:760px){
-  .hero .wrap{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"photo kicker" "title title" "sub sub" "cta cta";column-gap:12px;align-items:center}
-  .hero-photo{width:72px;justify-self:start;align-self:center}
-  .hero-photo::before{inset:-22%;filter:blur(4px)}
-  .hero-photo img{width:72px;height:72px;object-fit:cover;object-position:center 14%;border-radius:50%;filter:none;box-shadow:0 0 0 2px rgba(255,210,63,.6),0 0 16px rgba(255,210,63,.35)}
-  .hero h1{max-width:none;margin-top:12px}
+  .hero{position:relative;overflow:hidden}
+  .hero .wrap{display:block;max-width:920px}
+  .hero .kicker,.hero h1,.hero .hero-sub,.hero .hero-cta{position:relative;z-index:1}
+  .hero h1{margin-top:12px}
+  .hero-photo{position:absolute;z-index:0;right:-8%;top:0;width:min(76vw,290px);height:250px;margin:0;overflow:hidden;pointer-events:none}
+  .hero-photo::before{left:20%;right:0;top:8%;bottom:30%;filter:blur(12px);opacity:.7}
+  .hero-photo::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,#0d0b1e 0%,rgba(13,11,30,.96) 36%,rgba(13,11,30,.78) 58%,rgba(13,11,30,.28) 84%,transparent 100%),linear-gradient(180deg,transparent 0%,transparent 58%,#0d0b1e 100%)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 6%;border-radius:0;opacity:1;filter:none;box-shadow:none}
 }
 
 .game{position:relative;background:var(--panel);border:2px solid var(--line);border-radius:24px;padding:16px;box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 0 0 6px var(--bg)}
