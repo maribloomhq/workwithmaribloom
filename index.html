@@ -185,8 +185,12 @@ img{max-width:100%}
 
 /* hero + game */
 .hero{padding-block:clamp(28px,5vw,64px) 8px}
-.hero .wrap{display:block;max-width:920px}
-.hero h1{font-size:clamp(2.05rem,4.4vw,3.85rem);margin-top:16px;max-width:18ch}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.82fr);grid-template-areas:"kicker photo" "title photo" "sub photo" "cta photo";column-gap:clamp(28px,4vw,64px);row-gap:0;align-items:center;max-width:1200px}
+.hero .kicker{grid-area:kicker}
+.hero h1{grid-area:title}
+.hero .hero-sub{grid-area:sub}
+.hero .hero-cta{grid-area:cta}
+.hero h1{font-size:clamp(2.05rem,4.2vw,3.55rem);margin-top:16px;max-width:none}
 .hero h1 span{color:var(--vio)}
 .hero p{font-size:1.12rem;color:var(--muted);max-width:62ch;margin:18px 0 26px}
 .hero p b{color:var(--ink)}
@@ -194,7 +198,16 @@ img{max-width:100%}
 .rules span,.rules label{font-family:var(--mono);font-size:.72rem;padding:6px 9px;border-radius:7px;border:1px solid var(--line);color:var(--muted)}
 .rules select,.cur{font:700 .74rem var(--mono);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:6px 8px;cursor:pointer}
 .hero p.sim,.arcade .sim{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin:12px 2px 0;opacity:.85;max-width:none}
-@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+.hero-photo{grid-area:photo;margin:0;justify-self:end;width:min(100%,440px);position:relative}
+.hero-photo::before{content:"";position:absolute;inset:-8%;border-radius:40px;background:radial-gradient(circle at 50% 40%,rgba(255,210,63,.28),rgba(75,227,189,.12) 42%,transparent 70%);filter:blur(8px);z-index:0;pointer-events:none}
+.hero-photo img{position:relative;z-index:1;display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:center 20%;border-radius:28px;border:2px solid color-mix(in srgb,var(--sun) 70%,transparent);box-shadow:0 0 0 8px rgba(255,210,63,.1),0 22px 50px rgba(0,0,0,.45),0 0 48px rgba(255,210,63,.22)}
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"photo kicker" "title title" "sub sub" "cta cta";column-gap:12px;align-items:center}
+  .hero-photo{width:64px;justify-self:start}
+  .hero-photo::before{inset:-18%;filter:blur(6px)}
+  .hero-photo img{width:64px;height:64px;border-radius:18px;border-width:2px;box-shadow:0 0 0 3px rgba(255,210,63,.22),0 0 16px rgba(255,210,63,.35)}
+  .hero h1{max-width:none;margin-top:12px}
+}
 
 .game{position:relative;background:var(--panel);border:2px solid var(--line);border-radius:24px;padding:16px;box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 0 0 6px var(--bg)}
 .hud{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}
@@ -814,11 +827,15 @@ html.hold-samples [data-held]{display:none!important}
   <div class="wrap">
     <div class="kicker">Booking &amp; follow-up automation for salons, spas &amp; gyms</div>
     <h1 class="disp">When your hands are busy, <span>the booking still gets made.</span></h1>
-    <p>I set up missed-call text-back, review requests and 60/90-day win-back in your own accounts, with a fixed price and 30 days of fixes. For salon, spa and gym owners in the US, UK and Australia.</p>
+    <p class="hero-sub">I set up missed-call text-back, review requests and 60/90-day win-back in your own accounts, with a fixed price and 30 days of fixes. For salon, spa and gym owners in the US, UK and Australia.</p>
     <div class="hero-cta">
       <a class="btn" href="#mbBook">Book a free 30-minute call</a>
       <a class="btn ghost" href="#game">Watch the demo / Play the game</a>
     </div>
+    <!-- [REPLACE] images/maribeth-hero.webp — swap this file for Maribeth's photo. Keep the alt text. -->
+    <figure class="hero-photo">
+      <img src="images/maribeth-hero.webp" width="720" height="720" alt="Maribeth Bañas, founder of Maribloom">
+    </figure>
   </div>
 </section>
 
